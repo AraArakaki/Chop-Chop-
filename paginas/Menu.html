@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="../css/estilos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -15,7 +19,7 @@
 </head>
 <body class="menu">
 
-    <header>
+    <header class="wow animate__fadeInDown">
 
         <div id="logo">
             <a href="../index.html"> <img src="../imagenes/kisslogo1.png" alt="Logo"></a>
@@ -215,21 +219,20 @@
 
     </main>
 
-    <aside class="ArtMenu">
+    <aside class="ArtMenu wow animate__fadeInRightBig">
         <img src="../imagenes/bibimbap.jpeg" alt="Menu del Dia">
        
         <div id="textoMenuDia">
             <h4>menu del dia</h4>
             <h5>Bibimbap</h5>
-            <p class="RowDescripcion">Bol de arroz blanco cubierto por un mix de verduras, tiras de carne y un huevo</p>
         </div>
-        <div id="backTop">
+        <!-- <div id="backTop">
             <a href="#platos">↑</a>
  
-         </div>
+         </div> -->
     </aside>
     <footer>
-        <hr>     
+        
    
         <ul>
             
@@ -240,5 +243,11 @@
         </ul>
         <p>Copyright ©2021 Logo Logo Argentina CABA. All rights reserved.</p>
     </footer>
+
+    <script src="js/wow.min.js"></script>
+    <script> 
+        new WOW().init(); 
+    </script>
+
 </body>
 </html>

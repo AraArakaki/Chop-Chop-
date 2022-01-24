@@ -8,7 +8,6 @@
 
 }
 
-
 body{
     display: grid;
     grid-template-columns: 50% 50%;
@@ -40,18 +39,20 @@ aside {
 h2{
     text-transform: uppercase;
     font-size: 40px;
+    padding-bottom:20px;
 }
 h4{
     font-size:20px;
     background-color: #FF2C2Ced;
-    padding:5% 0 2% 0;
+    padding:4% 0 0 0;
 }
 
 /* HEADER Y NAV */
 
 header{
+    animation-duration: 2s;
     grid-area: header;
-    background-color: rgba(0, 0, 0, 0.747);
+    background-color: rgba(0, 0, 0, 0.432); 
     position:sticky;
     top:0;
     width:100%;
@@ -89,7 +90,7 @@ li{
 li a {
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 18px;
     color:rgb(247, 244, 244);
     letter-spacing: 3px;
@@ -101,12 +102,10 @@ li a:visited{
 
 nav ul li a:hover{
     color:rgba(249, 253, 6, 0.938);
-    font-weight: 300;
-    border-bottom: 1px solid rgba(245, 241, 2, 0.959);
+    font-weight: 500;
+    border-bottom: 2px solid rgba(245, 241, 2, 0.959);
     padding-bottom: 7px;
 }
-
-
 
 #Menu {
 	position: absolute;
@@ -157,20 +156,21 @@ footer  {
     text-align:center;
     color:black;
     background-color: #fff;
-    height:150px;
+    height:70px;
     width:100%;
+    position:sticky;
+    bottom:0;
 
   }
 
 footer ul li{
     display:inline-block;
-    padding:10px;
+    padding:5px;
 }  
 
 footer img{
-    height:30px;
-    width:30px;
-    margin:15px; 
+    height:25px;
+    width:25px;
 }
 
 /* HOME */
@@ -193,9 +193,7 @@ footer img{
     width:100%;
     text-transform: uppercase;
     text-align: center;
-
 }
-
 
 h1{
     color:#ffff;
@@ -204,8 +202,9 @@ h1{
     line-height: 80px;
     width: 860px;
     margin: 100px auto;
-    
-    
+    animation-duration: 1s;
+    transition: all .5s linear; 
+
 }
 
 .thin{
@@ -216,15 +215,14 @@ h1{
 #botondeli{
     width:250px;
     margin:40px auto;
-    color:rgba(248, 246, 246, 0.493);
+    color:rgba(248, 246, 246, 0.897);
     letter-spacing: 3px;    
-    font-weight: 200;
+    font-weight: 300;
     padding: 20px 20px;
     border-style: solid;
-    border-width: 0.5px;
+    border-width: 2px;
     background-color: rgba(2, 2, 2, 0.137);
     border-radius: 2px;
-
 }
 
 #botondeli a{
@@ -235,6 +233,7 @@ h1{
 #botondeli:hover{
     background-color: rgba(241, 16, 16, 0.438);
     transition: .5s ease-in-out;
+    cursor: pointer;
 }
 
 
@@ -244,6 +243,7 @@ h1{
     width:90%;
     margin:2% auto 2%;
     padding:4%;
+    animation-duration: 2s;
 
 }
 
@@ -253,12 +253,13 @@ h1{
     font-size: 27px;
     line-height: 35px;
     letter-spacing: 2%;
+
 }
 
 #reviews{
     background-color: #FF2C2Ced;
     width:100%;
-    padding:50px 70px 70px 70px;
+    padding:20px 70px 70px 70px;
    
 }
 
@@ -277,6 +278,8 @@ h4{
     justify-content: space-around;
     flex-wrap: wrap;
     padding:0;
+    animation-duration: 2s;
+
 }
 
 #rating{
@@ -294,7 +297,6 @@ h4{
 .yellow{
     color:yellow;
     padding:0;
-
 }
 
 .resena{
@@ -313,50 +315,58 @@ h4{
 
 #photos{
     background-color: white;
-   
-
- 
 }
+
 .galeria {
     height: 100%;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: space-around;
+    align-content: space-between;
     justify-content: center;
-    padding:1rem;
+    padding-top:5% ;
 
 }
 
-.imgphoto{
+.imgphoto {
     width:250px;
     height:250px;
     object-fit:cover;
-    padding:1%;
+    padding:0.5%;
+    animation-duration: 1s;
+    transition: all 5s linear; 
 }
-
-
-
 
 /* MENU */
 
 #platos{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    width: 500px;
+    position:sticky;
+    top:98px;
+    padding:10px 0;
+    
 }
+
 #platos li{
-    padding-right: 0 15% 0 0;
+    padding:0;
+    border:2px black solid;
+    padding:2%;
+    background-color:white;
 }
 #platos a{
-    color:rgb(97, 94, 94);
+    color:rgb(5, 0, 0);
     font-size: 20px;
-    font-weight:800 ;
     letter-spacing: 0;
+    
 }
-#platos a:hover{
-    color:rgb(136, 136, 132);
+#platos li:hover{
+    background-color:yellow;
+    border:2px rgba(0, 0, 0, 0) solid;
+    cursor: pointer;
+    transition: .3s;
 }
 
 table{
@@ -385,8 +395,7 @@ table{
     left:60%;
     bottom:200px;
     height:100%;
-    z-index: 1;
-    
+    animation-duration: 2s;
 
 }
 
@@ -415,6 +424,9 @@ table{
 #textoMenuDia h4{
     text-transform: uppercase;
     font-size: 24px;
+    background-color: rgba(212, 48, 48, 0);
+    padding:0;
+
 }
 
 #textoMenuDia h5{
@@ -432,28 +444,6 @@ table{
 th{
     padding-top:20px ;
     font-size: 20px;
-}
-
-#backTop{
-    position:fixed;
-    left:50%;
-    bottom:180px;
-    height: 40px;
-    width:40px;
-    background-color: rgba(245, 241, 2, 0.959);
-    border-radius: 45%;
-    padding:5px;
-    text-align: center;
-    z-index: 2;
-}
-#backTop a{
-    color:rgb(7, 0, 0);
-    text-decoration:none;
-    text-align:center;
-    font-size: 25px;
-}
-#backTop:hover{
-    background-color: rgb(247, 25, 43);
 }
 
 /*  NOSOTROS */
@@ -495,22 +485,22 @@ th{
     padding:2% 3% 2% 3%;
     color:white;
     text-align:justify;
-    margin:1% ;
-
 }
 
 /* CATERING */
 
 .botonPresupuesto{
-    background-color: black;
     padding:10px;
-    color:white;
+    color:rgb(10, 10, 10);
+    border: 2px solid black;
+    background-color: white;
     text-transform: uppercase;
     text-align: center; 
     text-decoration: none;   
     display: inline-block;
     width: 100%;
     margin:20px 0 30px 0;
+    font-weight: 500;
 }
 .catering main{
     grid-area:a1;
@@ -524,6 +514,22 @@ th{
     height:auto;
  }
 
+ .catering .infoMain p {
+    animation-duration: 3s;
+    padding:10px 0;
+    }
+
+ .botonPresupuesto {
+    animation-duration: 2s;
+    }
+.botonPresupuesto:hover{
+    cursor: pointer;
+    background-color:rgb(2, 2, 0);
+    border-color:rgb(7, 7, 0);
+    color:white;
+    transition: .2s;
+} 
+
 /* CONTACTO */
 #contacto{    
     background-image: url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
@@ -531,23 +537,56 @@ th{
     background-repeat: no-repeat;
     background-position: 30% 50%;
     background-attachment: fixed;
-    color:white;    
+    color:white;       
+}
+
+
+#formC{
+    width:120%;
+    height: 100%;
+    display:inline-block;
+    padding-top:5%;  
 }
 
 form input, textarea{
     display:block;
     padding:6px;
-    margin:4px;
     width:100%;
+    text-transform: uppercase;
+    font-size: 15px;
+    color:white;
+    margin-top:3%;
+    letter-spacing: 1px;
 }
 
-#formC{
-    width:100%;
-    height: 100%;
-    display:inline-block;
-    padding-top:5%;
-
+input[type=text],[type=Email],[type=number]{
+    height:40px;
+    border:none;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 2px white solid;
 }
+
+input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
+    outline:none;
+}
+
+input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
+    border-color:yellow;
+}
+
+input[type=submit], [type=reset] {
+    width:50%;
+    border:2px solid rgb(243, 239, 239);
+    background-color: rgba(255, 255, 255, 0);
+    
+}
+input[type=submit]:hover, [type=reset]:hover{
+    border:2px solid yellow;
+    background-color:yellow;
+    color:rgb(8, 8, 8);
+    cursor: pointer;
+}
+
 .infoContacto{
     padding:20px 0px 20px 10px;
     text-transform: uppercase;
@@ -555,11 +594,7 @@ form input, textarea{
     font-size:18px;
     font-weight: 200;
 }
-input{
-    background-color:rgba(233, 230, 230, 0.651);
-    height:30px;
-    border-radius: 4px;
-}
+
 .datoscontacto{
     font-size:10px;
     font-weight: 100;
@@ -569,9 +604,10 @@ input{
 .mapa{
     width:100%;
     grid-area: a3 / span 2;
-
 }
-
+.mapa iframe{
+    animation-duration: 1s;
+}
 
     /* MEDIA QUERY */
     @media screen and (max-width:480px) {
@@ -608,12 +644,11 @@ input{
     #botondeli{
         font-weight: 400;
         background-color: rgba(2, 2, 2, 0.315);
-
     }
 
     header {
         position: sticky;
-        height: 100px;
+        height: 60px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -622,14 +657,14 @@ input{
     }   
     
     #logo img{
-        width: 100px;
+        width: 70px;
         height: auto;
-        margin:30px 0 0 0;
+        margin:13px 0 0 0;
     }
 
     #logo{
         position:absolute;
-        top:10px;
+        top:3px;
     }
 
     
@@ -638,18 +673,18 @@ input{
         position:absolute;
         top:60px;
         right:10%;
-        
+  
     }
 
     #navPrincipal{
         display:none;
         position:fixed;
-        z-index: 5;
+        z-index: 1;
         padding:0;
         left:0;
         right:0;
         max-width:480px;
-        top:100px;
+        top:60px;
         bottom: 100%;
         flex-direction:column;
         justify-content: space-evenly;        
@@ -677,7 +712,7 @@ input{
         }
     
     li a {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     #frase{
@@ -760,7 +795,9 @@ input{
         flex-direction: column;
         column-gap: 5%;
         width: 100%;
-
+        padding:0;
+        position:static;
+        top:0px;
     }
     #platos a{
         font-size: 40px;
@@ -772,6 +809,10 @@ input{
     #platos a:hover{
         color:yellow;    
     }
+
+    #platos li:hover{
+        background-color: #fff;
+    }
     
     #platos li{
         width:400px;
@@ -781,6 +822,7 @@ input{
         background-image: url(../imagenes/vietnamese\ spring\ rolls.jpeg);
         background-size:cover;
         background-position: 50% 50%;
+        border:none;
     }
 
     #platos :nth-child(2){
@@ -1059,7 +1101,7 @@ input{
                 justify-content:start;
                 width: 50%;
                 position:sticky;
-
+                top: 110px;;
             }
             #platos a{
                 font-size: 15px;

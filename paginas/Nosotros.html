@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros</title>
     <link rel="stylesheet" href="../css/estilos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
    
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -15,7 +18,7 @@
 
 </head>
 <body id="nosotros">
-    <header>
+    <header class="wow animate__fadeInDown">
         <div id="logo">
             <a href="../index.html"> <img src="../imagenes/kisslogo1.png" alt="Logo"></a>
        </div>
@@ -62,11 +65,11 @@
     </main>
 
     <div class="galeria" >
-            <img class="imgphoto" src="../imagenes/dumplings.jpeg" alt="nabe">
-            <img class="imgphoto" src="../imagenes/veggie ramen.jpeg" alt="nabe">
-            <img class="imgphoto" src="../imagenes/bibimbap.jpeg" alt="nabe">
-            <img class="imgphoto" src="../imagenes/tofu katsu curry.jpeg" alt="nabe"> 
-            <div class="imgphoto span">
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/dumplings.jpeg" alt="nabe">
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/veggie ramen.jpeg" alt="nabe">
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/bibimbap.jpeg" alt="nabe">
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/tofu katsu curry.jpeg" alt="nabe"> 
+            <div class="imgphoto span wow animate__slideInUp">
                 <h3>Nuestra vision</h3>
                 <p class="texto">
                 Nuestro menú no está limitado por las tradiciones, por lo que para 
@@ -77,10 +80,10 @@
                 hemos aprendido de nuestras propias experiencias viviendo y cocinando.
                 </p>
             </div>
-            <img class="imgphoto" src="../imagenes/vietnamese spring rolls.jpeg" alt="nabe"> 
-            <img class="imgphoto" src="../imagenes/Gyudon.jpeg" alt="nabe">
-            <img class="imgphoto" src="../imagenes/melonbingsu.jpeg" alt="nabe">
-            <img class="imgphoto" src="../imagenes/chirashi sushi.jpeg" alt="nabe">             
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/vietnamese spring rolls.jpeg" alt="nabe"> 
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/Gyudon.jpeg" alt="nabe">
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/melonbingsu.jpeg" alt="nabe">
+            <img class="imgphoto wow animate__slideInUp" src="../imagenes/chirashi sushi.jpeg" alt="nabe">             
         
     </div>
     
@@ -94,7 +97,7 @@
 
 
     <footer>    
-        <hr>     
+       
         <ul>
             <li><a href="https://instagram.com"><img src="../imagenes/instagram.png" alt="logodeinstagram"></a>
             </li>
@@ -103,6 +106,11 @@
         </ul>
         <p>Copyright ©2021 Logo Logo Argentina CABA. All rights reserved.</p>
     </footer>
+
+    <script src="js/wow.min.js"></script>
+    <script> 
+        new WOW().init(); 
+    </script>
 </body>
 </html>
 
