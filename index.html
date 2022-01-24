@@ -8,6 +8,11 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -20,7 +25,7 @@
 <body id="fondouno">
   
 
-    <header>
+    <header class="wow animate__fadeInDown">
 
         <div id="logo">
              <img src="imagenes/kisslogo1.png" alt="Logo"></a>
@@ -53,7 +58,7 @@
         
             <section>
                 
-                <h1>Todos los sabores de la fusion asiatica <span class="thin">en tu casa</span></h1>
+                <h1 class="wow animate__fadeIn animate__slideInUp">Todos los sabores de la fusion asiatica <span class="thin">en tu casa</span></h1>
         
                 <div id="botondeli">
                     <a href ="https://pedidosya.com.ar"> delivery & take out</a>
@@ -61,7 +66,7 @@
         
             </section>  
 
-            <article id="frase">
+            <article id="frase" class="wow animate__slideInUp">
                 <p>
                     “A dish should have flavor, texture, appearance and smell, 
                     but I'm doing it differently. We take Chinese food, play with your 
@@ -74,7 +79,7 @@
                 Reseñas
             </h4>
             <article id ="reviews">
-                <section id="reseña">
+                <section id="reseña" class=" wow animate__slideInUp">
 
                     <div class="resena">
                         <ul id="rating">
@@ -150,28 +155,23 @@
 
                 <div class="galeria">
                 
-                    <img class="imgphoto" src="imagenes/marta-markes-lfgsLxX17QA-unsplash.jpg" alt="sumplings">
-                    <img class="imgphoto" src="imagenes/somen.jpeg" alt="somen">
-                    <img class="imgphoto" src="imagenes/bibimbap.jpeg" alt="bibimbap">
-                    <img class="imgphoto" src="imagenes/tofu katsu curry.jpeg" alt="kare curry">
-                    <img class="imgphoto" src="imagenes/vietnamese spring rolls.jpeg" alt="vietnamese"> 
-                    <img class="imgphoto" src="imagenes/Gyudon.jpeg" alt="gyudon">
-                    <img class="imgphoto" src="imagenes/Fried noodle.jpg" alt="gyudon">
-                    <img class="imgphoto" src="imagenes/chirashi.jpeg" alt="sushi"> 
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/somen.jpeg" alt="somen">
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/marta-markes-lfgsLxX17QA-unsplash.jpg" alt="sumplings">
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/bibimbap.jpeg" alt="bibimbap">
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/tofu katsu curry.jpeg" alt="kare curry">
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/vietnamese spring rolls.jpeg" alt="vietnamese"> 
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/Gyudon.jpeg" alt="gyudon">
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/Fried noodle.jpg" alt="gyudon">
+                    <img class="imgphoto wow animate__slideInUp" src="imagenes/chirashi.jpeg" alt="sushi"> 
                         
                 </div>
                     
             </article>  
     </main>
             
-      
-            
-
-   
-            
 
     <footer>
-        <hr>
+        
              <ul>
                 <li>
                     <a href="https://instagram.com"><img src="imagenes/instagram.png" alt="logodeinstagram"></a>
@@ -184,6 +184,11 @@
         <p>Copyright ©2021 Logo Logo Argentina CABA. All rights reserved.</p>
 
     </footer>
+
+    <script src="js/wow.min.js"></script>
+    <script> 
+        new WOW().init(); 
+    </script>
 
 </body>
 </html>
