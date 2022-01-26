@@ -3,9 +3,8 @@
     margin:0;
     padding:0;
     font-family: 'Barlow Semi Condensed', sans-serif;
-    transition: all 1s linear; 
-
-
+    transition: all .5s linear; 
+    animation-duration: 2s;
 }
 
 body{
@@ -40,11 +39,20 @@ h2{
     text-transform: uppercase;
     font-size: 40px;
     padding-bottom:20px;
+    font-weight:bold;
 }
+h3{
+    color:black;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2% 0 2%;
+    font-size:25px;
+}
+
 h4{
     font-size:20px;
-    background-color: #FF2C2Ced;
     padding:4% 0 0 0;
+    font-weight: bold;
 }
 
 /* HEADER Y NAV */
@@ -61,7 +69,6 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2%;
-
 }
 
 #logo img{
@@ -149,24 +156,30 @@ nav .icono-menu .linea {
 
 footer  {
     grid-area: footer;
-    font-size: 9px;
+    font-size: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align:center;
+    justify-content: space-evenly;
+    align-items: center;
     color:black;
     background-color: #fff;
     height:70px;
     width:100%;
-    position:sticky;
+    position: fixed;
     bottom:0;
-
   }
 
 footer ul li{
     display:inline-block;
-    padding:5px;
+    padding:0 5px 0 0;
+    margin-bottom: 0;
+    
 }  
+
+footer ul{    
+    margin-bottom: 0;
+    padding:10px 0 0 0;
+}
 
 footer img{
     height:25px;
@@ -202,9 +215,7 @@ h1{
     line-height: 80px;
     width: 860px;
     margin: 100px auto;
-    animation-duration: 1s;
-    transition: all .5s linear; 
-
+    font-weight: bold;
 }
 
 .thin{
@@ -236,15 +247,12 @@ h1{
     cursor: pointer;
 }
 
-
-
 #frase{
     background-color: rgba(248, 250, 252, 0.945);
     width:90%;
     margin:2% auto 2%;
     padding:4%;
     animation-duration: 2s;
-
 }
 
 #frase p{
@@ -259,8 +267,7 @@ h1{
 #reviews{
     background-color: #FF2C2Ced;
     width:100%;
-    padding:20px 70px 70px 70px;
-   
+    padding:20px 70px 70px 70px;   
 }
 
 
@@ -268,8 +275,7 @@ h4{
     font-family: 'Barlow Semi Condensed', sans-serif, bold ;
     text-align: center;
     font-size: 30px;
-    letter-spacing: 2px;
-    
+    letter-spacing: 2px;  
 }
 
 #reseña{
@@ -278,7 +284,7 @@ h4{
     justify-content: space-around;
     flex-wrap: wrap;
     padding:0;
-    animation-duration: 2s;
+    animation-duration: 1s;
 
 }
 
@@ -305,7 +311,6 @@ h4{
     text-align:justify;
     text-overflow: ellipsis;
 }
-
 .nombreresena{
     text-align: right;
     padding-top: 15px;
@@ -315,6 +320,7 @@ h4{
 
 #photos{
     background-color: white;
+    height:650px;
 }
 
 .galeria {
@@ -322,21 +328,41 @@ h4{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: space-between;
+    align-content: flex-start;
     justify-content: center;
     padding-top:5% ;
 
 }
 
 .imgphoto {
-    width:250px;
+    width:280px;
     height:250px;
-    object-fit:cover;
+    object-fit: cover;
     padding:0.5%;
-    animation-duration: 1s;
-    transition: all 5s linear; 
 }
 
+#BotonCovid{
+    background-color: black;
+    position:fixed;
+    bottom:15px;
+    right:15px;
+    Color:white;
+}
+.offcanvas-body{
+    color:black;
+    width:80%;
+    margin:auto;
+    text-transform: none;
+    text-align:center;
+    padding-top:0;
+}
+.logo-casa{
+    width:40px;
+}
+
+.offcanvas-header{
+    padding-bottom:0;
+}
 /* MENU */
 
 #platos{
@@ -347,7 +373,7 @@ h4{
     position:sticky;
     top:98px;
     padding:10px 0;
-    
+
 }
 
 #platos li{
@@ -381,42 +407,40 @@ table{
     font-weight: 200;
     font-style: italic;
     padding-top:5px;
-
 }
 
-.ProductoMenu{
-    border-bottom: 1px dotted rgb(75, 73, 73);
+.ProductoMenu, .precio{
+    border-bottom: 1px solid rgb(75, 73, 73);
     text-transform: uppercase;
     padding-top:15px;
 }
+
 .ArtMenu{
     position:fixed;
-    top:150px;
+    top:100px;
     left:60%;
-    bottom:200px;
     height:100%;
-    animation-duration: 2s;
-
+    z-index: -1;
 }
 
 .ArtMenu img{
-    height:300px;
-    width:80%;
+    height:75%;
+    width:100%;
     object-fit:cover;
-    border-radius: 2%;
-
+    border-radius: 2px;
 }
+
 #textoMenuDia{
     display: block;
     position: relative;
-    bottom: 0%;
-    width: 80%;
-    height:100px;
-    background-color: #FF2C2Ced;
+    bottom:12%;
+    width: 100%;
+    height:12%;
+    background-color: #ff2c2ced;
     padding:18px;
     color:white;
-
 }
+
 .precio{
     text-align: right;
 }
@@ -426,19 +450,17 @@ table{
     font-size: 24px;
     background-color: rgba(212, 48, 48, 0);
     padding:0;
-
 }
 
 #textoMenuDia h5{
     text-transform: uppercase;
     font-size: 21px;
-    color:yellow;
     text-align:center;
 }
+
 #textoMenuDia p{
     font-size:12px;
     text-align:center;
-
 }
 
 th{
@@ -453,10 +475,8 @@ th{
 #nosotros main{grid-area:a2;}
 #nosotros aside{grid-area:a1;}
 
-.galeria h3{
+.yellow{
     color:yellow;
-    text-transform: uppercase;
-    padding: 2% 0 2%;
 }
 
 .video {
@@ -474,15 +494,18 @@ th{
     right: 0;
     width: 100%;
     height: 100%;
-    margin:2% ;
-  }
-
-
+    z-index: -1;
+}
 .span{
-    width:500px;
+    width:580px;
     height:250px;
     background-color: rgba(241, 30, 47, 0.993);
     padding:2% 3% 2% 3%;
+    border:7px solid white;
+    
+}
+.texto{
+    line-height: 1.2rem;
     color:white;
     text-align:justify;
 }
@@ -510,18 +533,22 @@ th{
     {grid-area:a2;}
 
 .catering .side img{
-    width:90%;
-    height:auto;
+    width:100%;
+    height:480px;
+    object-fit: cover;
+    overflow: hidden;
+    transition:.3s;
+ }
+
+.catering .carousel{
+     z-index: -1;
  }
 
  .catering .infoMain p {
-    animation-duration: 3s;
-    padding:10px 0;
-    }
-
- .botonPresupuesto {
     animation-duration: 2s;
-    }
+    padding:10px 0;
+}
+
 .botonPresupuesto:hover{
     cursor: pointer;
     background-color:rgb(2, 2, 0);
@@ -542,7 +569,7 @@ th{
 
 
 #formC{
-    width:120%;
+    width:100%;
     height: 100%;
     display:inline-block;
     padding-top:5%;  
@@ -592,12 +619,11 @@ input[type=submit]:hover, [type=reset]:hover{
     text-transform: uppercase;
     line-height: 30px;
     font-size:18px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .datoscontacto{
     font-size:10px;
-    font-weight: 100;
     color:yellow;
 }
 
@@ -610,7 +636,7 @@ input[type=submit]:hover, [type=reset]:hover{
 }
 
     /* MEDIA QUERY */
-    @media screen and (max-width:480px) {
+        @media screen and (max-width:480px) {
 
     body{
     grid-template-columns:100%;
@@ -632,6 +658,7 @@ input[type=submit]:hover, [type=reset]:hover{
     h1{
         font-size: 30px;
         line-height: 30px;
+        font-weight: 500;
         width: 300px;
         margin: 50px auto;
         transition:font-size 0.2s ease-in-out;
@@ -679,7 +706,7 @@ input[type=submit]:hover, [type=reset]:hover{
     #navPrincipal{
         display:none;
         position:fixed;
-        z-index: 1;
+        z-index: 99;
         padding:0;
         left:0;
         right:0;
@@ -734,21 +761,9 @@ input[type=submit]:hover, [type=reset]:hover{
         text-align:justify;
         flex-direction: row;
         flex-wrap: nowrap;
-        animation:nextResena;
-        animation-duration: 30s;
-        animation-iteration-count: infinite;
+        z-index:0;
     }
-        
-    @keyframes nextResena{
-        from {
-            transform: translateY(100vh) translateZ(-50vh);
-          }
-          to {
-            transform: translateY(-100vh) translateZ(-50vh);
-          }
-          
-    }  
-
+    
     #reviews{
         height:350px;
         overflow:hidden;
@@ -757,6 +772,14 @@ input[type=submit]:hover, [type=reset]:hover{
     .imgphoto{
         width:480px;
     }
+
+    .imgCarousel{
+        width:800px%;
+        height:300px;
+        object-fit:cover;
+    }
+
+    
     
     /* NOSOTROS */
     body{     
@@ -919,8 +942,9 @@ input[type=submit]:hover, [type=reset]:hover{
     #contacto footer{
         grid-area:footer;
     }
-    }
-@media  (min-width:481px) and (max-width:768px){    
+     }
+    
+    @media  (min-width:481px) and (max-width:768px){    
 
         body{    
             grid-template-columns:100%;

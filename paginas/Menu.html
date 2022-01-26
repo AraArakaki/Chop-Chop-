@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>MENU | CHOP CHOP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../css/estilos.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -49,174 +52,226 @@
         <h2 id="titulo"> Menu </h2>
 
         <ul id="platos">
-            <li><a href="#">Entrada</a></li>
-            <li><a href="#">Sushi</a></li>
-            <li><a href="#">Principal</a></li>
-            <li><a href="#">Postres</a></li>
-            <li><a href="#">Bebidas</a></li>
+            <li><a data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                ENTRADAS</a></li>   
+            <li><a data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample1">
+                PRINCIPAL</a></li> 
+            <li><a data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample1">
+                SUSHI</a></li> 
+            <li><a data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample1">
+                POSTRES</a></li>    
+            <li><a data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample1">
+                BEBIDAS</a></li>         
         </ul>
-
-            
-        <section>
-    
-            <table>
+        
+        <div class="collapse" id="collapseExample1">
+            <div>
+                <table>
+                <th>Entradas</th>
+                <tr>
+                    <td class="ProductoMenu">Dumpllings</td>
+                    <td class="precio">$400</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Empanaditas rellenas de cerdo x 5 unidades</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Karaague</td>
+                    <td class="precio">$500</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Trozos de pollo frito</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Ebi furai</td>
+                    <td class="precio">$750</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Langostinos rebozado frito</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Nikuman</td>
+                    <td class="precio">$200</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Pan relleno al vapor x 1 unidad</td>
+                </tr>
+                </table>
+            </div>
+        </div>         
+        <div class="collapse" id="collapseExample2">
+            <div>
+                <table>
+                <th>Principal</th>
+                <tr>
+                    <td class="ProductoMenu">Gyudon</td>
+                    <td class="precio">$700</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Lomo salteado y huevo con base de arroz blanco</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Bibimbap</td>
+                    <td class="precio">$650</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Ramen</td>
+                    <td class="precio">$900</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion"> SHOYU | VEGGIE | TONKOTSU | MISO</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Chow mien</td>
+                    <td class="precio">$540</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion"> Arroz salteado CERDO | POLLO | CAMARONES</td>
+                </tr>
+                </table>
+            </div>
+        </div>         
+        <div class="collapse" id="collapseExample3">
+            <div>
+                <table>
                 <th>Sushi</th>
                 <tr>
-                    <td class="ProductoMenu">Roll New York</td>
+                    <td class="ProductoMenu">Sashimi</td>
+                    <td class="precio">$700</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">fetas de salmon x5</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Nigiri</td>
+                    <td class="precio">$650</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Salmon x 8 piezas</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Rolls</td>
+                    <td class="precio">$900</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion"> NY | PHILA | CALI | TUNA | VEGGIE | x 8 piezas</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Maki</td>
                     <td class="precio">$540</td>
                 </tr>
                 <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
+                    <td class="RowDescripcion"> SAKE | KAPPA | TAMAGO | x 8 piezas</td>
+                </tr>
+                </table>
+            </div>
+        </div>  
+        <div class="collapse" id="collapseExample4">
+            <div>
+                <table>
+                <th>Postres</th>
+                <tr>
+                    <td class="ProductoMenu">Helado Melona</td>
+                    <td class="precio">$700</td>
                 </tr>
                 <tr>
-                    <td class="ProductoMenu">Roll New York</td>
+                    <td class="RowDescripcion">Palito de helado MELON | BANANA | FRUTLLA</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Purin</td>
+                    <td class="precio">$600</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Envase de 150cc CHOCOLATE | MATCHA | PASSION FRUIT </td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Dorayaki helado</td>
+                    <td class="precio">$900</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion"> CHOCO | LEMON PIE | NUTELLA | C.PASTELERA | MATCHA | x 6 unidades</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Mochi helado</td>
                     <td class="precio">$540</td>
                 </tr>
                 <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
+                    <td class="RowDescripcion"> CHOCOLATE | MATCHA | OREO | GINGER | ICHIGO x 1 unidad</td>
                 </tr>
                 <tr>
-                    <td class="ProductoMenu">Roll New York</td>
+                    <td class="ProductoMenu">Mini Cheesecake</td>
+                    <td class="precio">$1000</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion"> Cheesecake Japones (15 diametro)x 1 unidad</td>
+                </tr>
+                </table>
+            </div>
+        </div>
+        <div class="collapse" id="collapseExample5">
+            <div>
+                <table>
+                <th>Bebidas</th>
+                <tr>
+                    <td class="ProductoMenu">Te verde</td>
+                    <td class="precio">$700</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Botella 500 ml</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Soju Chum Churum</td>
+                    <td class="precio">$600</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion">Envase de 350cc BLUEBERRY | YOGURT | GRAPES </td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Cerveza Kirin</td>
+                    <td class="precio">$900</td>
+                </tr>
+                <tr>
+                    <td class="RowDescripcion"> Lata 500cc</td>
+                </tr>
+                <tr>
+                    <td class="ProductoMenu">Cerveza Asahi</td>
                     <td class="precio">$540</td>
                 </tr>
                 <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
+                    <td class="RowDescripcion"> Lata 350 cc</td>
                 </tr>
                 <tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
+                    <td class="ProductoMenu">Sake</td>
+                    <td class="precio">$1000</td>
                 </tr>
                 <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
+                    <td class="RowDescripcion"> Botella 400 cc</td>
                 </tr>
-                <tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr>
-
-                <th>Wok</th>
-                <tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr>
-
-                <th>Donburi</th>
-                <tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr>
-
-                <th>Obentos</th>
-                <tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr><tr>
-                    <td class="ProductoMenu">Roll New York</td>
-                    <td class="precio">$540</td>
-                </tr>
-                <tr>
-                    <td class="RowDescripcion">Salmon y palta x 8 piezas</td>
-                </tr>
-            </table>
+                </table>
+            </div>
+        </div>  
+    
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body small">
+                <img class="logo-casa"src="../imagenes/logo_casa.png" alt="Quedate en casa">
+                <h5>Quedate en casa</h5>
+                El local está abierto nuevamente, pero la seguridad sigue siendo 
+                nuestra principal prioridad, así que lea nuestros procesos de 
+                seguridad actuales pensando en usted y nuestro maravilloso equipo.
+                Junto con las pautas gubernamentales actuales, es necesario el uso 
+                de tapabocas y alcohol en gel, alentamos a nuestros invitados y 
+                al equipo a actuar de la manera en que se sientan seguros.
+                Tenemos nuestros menús disponibles en papel de un solo uso o 
+                digital a través de un código QR en el local.                
+            </div>
+        </div>
         
-        </section>
-
     </main>
 
     <aside class="ArtMenu wow animate__fadeInRightBig">
@@ -224,7 +279,7 @@
        
         <div id="textoMenuDia">
             <h4>menu del dia</h4>
-            <h5>Bibimbap</h5>
+            <h5 class="yellow">Bibimbap</h5>
         </div>
         <!-- <div id="backTop">
             <a href="#platos">↑</a>
@@ -232,13 +287,14 @@
          </div> -->
     </aside>
     <footer>
-        
+        <button id="BotonCovid"class="btn BotonCovid" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">COVID-19</button>
    
         <ul>
-            
-            <li><a href="https://instagram.com"><img src="../imagenes/instagram.png" alt="logodeinstagram"></a>
+            <li><a href="https://instagram.com"><img src="../imagenes/instagram.png" alt="Logo Instagram"></a>
             </li>
-            <li><a href="https://facebook.com"><img src="../imagenes/facebook.png" alt="logodefacebook"></a>
+            <li><a href="https://facebook.com"><img src="../imagenes/facebook.png" alt="Logo Facebook"></a>
+            </li>
+            <li><a href="https://facebook.com"><img src="../imagenes/tripadvisor.png" alt="Logo Trip Advisor"></a>
             </li>
         </ul>
         <p>Copyright ©2021 Logo Logo Argentina CABA. All rights reserved.</p>
@@ -248,6 +304,7 @@
     <script> 
         new WOW().init(); 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
 </html>
