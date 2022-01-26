@@ -414,7 +414,9 @@ table{
     text-transform: uppercase;
     padding-top:15px;
 }
-
+.table-platos{
+    display:none;
+}
 .ArtMenu{
     position:fixed;
     top:100px;
@@ -882,6 +884,7 @@ input[type=submit]:hover, [type=reset]:hover{
         display: none;
     }
     .table-platos{
+        display:table;
         margin: auto;
         width:70%;
         font-size: 15px;
