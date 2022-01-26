@@ -810,7 +810,7 @@ input[type=submit]:hover, [type=reset]:hover{
     /* MENU */
 
     .menu{
-        grid-template-rows: 0.2fr auto 0.2fr;
+        grid-template-rows: 0.2fr 100% 0.2fr;
     }
 
     #platos{
@@ -842,29 +842,34 @@ input[type=submit]:hover, [type=reset]:hover{
         height:100px;
         padding: 5% 10% ;
         margin-top:2%;
-        background-image: url(../imagenes/vietnamese\ spring\ rolls.jpeg);
         background-size:cover;
         background-position: 50% 50%;
         border:none;
     }
 
-    #platos :nth-child(2){
-        background-image: url(../imagenes/chirashi.jpeg);
+    #Entradas{
+        background-image: url(../imagenes/vietnamese\ spring\ rolls.jpeg);
         background-size:cover;
         background-position: 50% 50%;
     }
-    #platos :nth-child(3){
+    
+    #Principal{
         background-image: url(../imagenes/Gyudon.jpeg);
+        background-size:cover;
+        background-position: 50% 50%;
+    }
+    #Sushi {
+        background-image: url(../imagenes/chirashi\ sushi.jpeg);
         background-size:cover;
         background-repeat: no-repeat;
         background-position: 50% 50%;
     }           
-    #platos :nth-child(4){
+    #Postres {
         background-image: url(../imagenes/melonbingsu.jpeg);
         background-size:cover;
         background-position: 50% 50%;
     }
-    #platos :nth-child(5){
+    #Bebidas {
         background-image: url(../imagenes/drink.jpeg);
         background-size:cover;
         background-position: 50% 40%;
@@ -873,13 +878,21 @@ input[type=submit]:hover, [type=reset]:hover{
     #platos li a {
         background-image:none;
     }
-
-    table{
+    .table{
         display: none;
+    }
+    .table-platos{
+        margin: auto;
         width:70%;
         font-size: 15px;
         text-align: left;
         padding-top:0px;
+        background-image:none;
+    }
+
+    .collopse{
+        background-image:none;
+
     }
     
     .ArtMenu{
