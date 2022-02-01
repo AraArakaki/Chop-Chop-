@@ -26,33 +26,36 @@ aside {
 
 .galeria {
    grid-area: a3 / span 2;
-
 }
 
 .infoMain{
-    width:80%;
+    width:90%;
     margin:auto;
-
 }
  
 h2{
     text-transform: uppercase;
-    font-size: 40px;
-    padding-bottom:20px;
+    font-size: 2.5rem;
+    padding-bottom:1rem;
     font-weight:bold;
 }
+
 h3{
+    font-size:1.5rem;
     color:black;
     text-transform: uppercase;
     font-weight: bold;
     padding: 2% 0 2%;
-    font-size:25px;
 }
 
 h4{
-    font-size:20px;
-    padding:4% 0 0 0;
+    font-size:2rem;
     font-weight: bold;
+    margin: 0;
+}
+
+.upCase{
+    text-transform: uppercase;
 }
 
 /* HEADER Y NAV */
@@ -96,7 +99,7 @@ li a {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.1rem;
     color:rgb(247, 244, 244);
     letter-spacing: 3px;
 }
@@ -171,7 +174,6 @@ footer ul li{
     display:inline-block;
     padding:0 5px 0 0;
     margin-bottom: 0;
-    
 }  
 
 footer ul{    
@@ -255,25 +257,16 @@ h1{
 #frase p{
     color:black;
     font-weight: 100;
-    font-size: 27px;
-    line-height: 35px;
+    font-size: 1.6rem;
+    line-height: 2rem;
     letter-spacing: 2%;
-
 }
 
 #reviews{
     background-color: #FF2C2Ced;
     width:100%;
-    padding:20px 70px 70px 70px;   
-    overflow-x:scroll; 
-}
-
-
-h4{
-    font-family: 'Barlow Semi Condensed', sans-serif, bold ;
-    text-align: center;
-    font-size: 2rem;
-    letter-spacing: 2px;  
+    padding:3%;   
+    overflow-x:hidden; 
 }
 
 #reseña{
@@ -281,7 +274,6 @@ h4{
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding:0;
     animation-duration: 1s;  
 }
 
@@ -289,8 +281,9 @@ h4{
     display: flex;
     flex-direction: row;
     width:100%;
+    padding:1rem 0;
+    margin:0;
     justify-content: space-around;
-    padding:20px;
 }
 
 #rating li{     
@@ -393,7 +386,7 @@ h4{
 }
 #platos a{
     color:rgb(5, 0, 0);
-    font-size: 20px;
+    font-size: 1.25rem;
     letter-spacing: 0;
     
 }
@@ -410,13 +403,13 @@ h4{
 
 table{
     width:90%;
-    font-size: 15px;
+    font-size: 1rem;
     text-align: left;
     padding-top:20px;
 }
 
 .RowDescripcion{
-    font-size:10px;
+    font-size:0.8rem;
     font-weight: 200;
     font-style: italic;
     padding-top:5px;
@@ -444,7 +437,6 @@ table{
     height:75%;
     width:100%;
     object-fit:cover;
-    border-radius: 2px;
 }
 
 #textoMenuDia{
@@ -454,35 +446,17 @@ table{
     width: 100%;
     height:12%;
     background-color: #ff2c2ced;
-    padding:18px;
+    padding:2%;
     color:white;
+    text-align: center;
 }
 
 .precio{
     text-align: right;
 }
 
-#textoMenuDia h4{
-    text-transform: uppercase;
-    font-size: 24px;
-    background-color: rgba(212, 48, 48, 0);
-    padding:0;
-}
-
-#textoMenuDia h5{
-    text-transform: uppercase;
-    font-size: 21px;
-    text-align:center;
-}
-
-#textoMenuDia p{
-    font-size:12px;
-    text-align:center;
-}
-
 th{
-    padding-top:20px ;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 /*  NOSOTROS */
@@ -491,10 +465,6 @@ th{
 }
 #nosotros main{grid-area:a2;}
 #nosotros aside{grid-area:a1;}
-
-.yellow{
-    color:yellow;
-}
 
 .video {
     position: relative;
@@ -534,7 +504,6 @@ th{
     color:rgb(10, 10, 10);
     border: 2px solid black;
     background-color: white;
-    text-transform: uppercase;
     text-align: center; 
     text-decoration: none;   
     display: inline-block;
@@ -546,8 +515,10 @@ th{
     grid-area:a1;
     text-align:justify;
     }
-.catering aside
-    {grid-area:a2;}
+
+.catering aside{
+        grid-area:a2;
+    }
 
 .catering .side img{
     width:100%;
@@ -640,15 +611,13 @@ input[type=submit]:hover, [type=reset]:hover{
 .infoContacto{
     grid-area:a2;
     padding:20px 0px 20px 10px;
-    text-transform: uppercase;
-    line-height: 30px;
-    font-size:18px;
+    line-height: 1.8rem;
+    font-size:1.2rem;
     font-weight: 400;
 }
 
 .datoscontacto{
-    font-size:10px;
-    color:yellow;
+    font-size:0.8rem;
 }
 
 .mapa{
@@ -826,7 +795,7 @@ input[type=submit]:hover, [type=reset]:hover{
     }
     
     #platos a{
-        font-size: 40px;
+        font-size: 2.5rem;
         color:white;
         text-shadow:2px 2px rgba(61, 59, 59, 0.452);
         font-weight: 400;
@@ -876,7 +845,7 @@ input[type=submit]:hover, [type=reset]:hover{
         display:table;
         margin: auto;
         width:70%;
-        font-size: 15px;
+        font-size: 1rem;
         text-align: left;
         padding-top:0px;
         background-image:none;
@@ -902,12 +871,11 @@ input[type=submit]:hover, [type=reset]:hover{
         padding:7%;
     }
     
-    #textoMenuDia h4{
-        font-size: 12px;
-        line-height: 12px;
+    h4{
+        font-size: .7rem;
     }
     
-    #textoMenuDia h5{
+    h5{
         display: none;
     } 
 
@@ -971,7 +939,7 @@ input[type=submit]:hover, [type=reset]:hover{
             }
 
             #Principal{
-            width:100%;
+                width:100%;
             }
 
             #navPrincipal{
@@ -1063,6 +1031,7 @@ input[type=submit]:hover, [type=reset]:hover{
             #contacto main{
                 grid-area:main;
             }
+
             #contacto aside{
                 grid-area:aside;
                 text-align:center;
@@ -1072,6 +1041,7 @@ input[type=submit]:hover, [type=reset]:hover{
                 width:100%;
                 grid-area:otro;
             }
+
             .infoContacto{
                 padding:2%;
                 text-transform: uppercase;
@@ -1123,10 +1093,8 @@ input[type=submit]:hover, [type=reset]:hover{
                 padding:10%;
             }            
             
-            #textoMenuDia h4{
-                text-align:center;
+            h4{
                 font-size: 0.9rem;
-                margin: 0;
             }
             
             #textoMenuDia h5{
