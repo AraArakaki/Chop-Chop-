@@ -173,7 +173,7 @@ footer{
 /* HOME */
 
 #fondouno{
-    background-image: url(../imagenes/chochin.jpg);
+    background-image: url(../imagenes/Chochin.jpg);
     @include backImg;
     color:white;
     width:100%;
@@ -335,7 +335,7 @@ h1{
         background-color: white;
         text-align: center;
     
-    & a{
+        & a{
         color:black;
     }    
         &:hover{
