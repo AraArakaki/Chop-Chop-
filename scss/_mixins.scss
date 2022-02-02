@@ -1,0 +1,74 @@
+@import "_variables.scss";
+
+@mixin titulos($size, $color){
+    font-size:$size;
+    color:$color;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+@mixin links{
+    text-transform:uppercase;
+    color:white;
+    list-style-type:none;
+}
+
+@mixin alinks ($color){
+    text-decoration:none;
+    letter-spacing: 2px;
+    color:$color;
+}
+
+@mixin hover($color, $backColor){
+    color:$color;
+    background-color: ($backColor);
+    cursor:pointer;
+    transition: .5s ease-in-out;
+}
+
+@mixin texto ($color, $size, $txtalign, $lineh ){
+    color:$color;
+    font-size:$size;
+    text-align:$txtalign;
+    line-height:$lineh;
+    animation-duration: 5s;
+}
+
+@mixin weight($size, $weight){
+    font-size:$size;
+    font-weight:$weight;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+@mixin flex ($direccion, $wrap, $alignItems, $justifyCont) {
+    display:flex;
+    flex-direction: $direccion;
+    flex-wrap: $wrap;
+    align-items:$alignItems;
+    justify-content:$justifyCont;
+}
+
+@mixin center($ancho){
+    width:$ancho;
+    margin:auto;
+}
+
+@mixin boton ($color, $border){
+    color: $color;
+    border:2px solid $border;
+    border-radius: 2px;
+    padding:2%;
+}
+
+@mixin fondo ($color){
+    background-color: $color;
+    transition: all .5s linear; 
+}
+
+@mixin backImg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
