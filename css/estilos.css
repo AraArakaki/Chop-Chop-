@@ -60,7 +60,7 @@ a {
 
 /* HEADER Y NAV */
 header {
-  animation-duration: 2s;
+  animation-duration: 1s;
   grid-area: header;
   background-color: rgba(0, 0, 0, 0.856);
   position: sticky;
@@ -149,7 +149,7 @@ footer {
   bottom: 0;
   color: black; }
   footer ul {
-    margin: 2% 0 0 0;
+    margin: 20px 0 5px;
     padding: 0; }
     footer ul li {
       display: inline-block;
@@ -183,9 +183,9 @@ h1 {
   width: 45%;
   margin: 100px auto; }
 
-.thin {
+.thin, #frase p {
   font-weight: 100;
-  letter-spacing: 3px; }
+  letter-spacing: 2px; }
 
 #botondeli {
   text-transform: uppercase;
@@ -215,9 +215,7 @@ h1 {
     font-size: 1.4rem;
     text-align: center;
     line-height: 2rem;
-    animation-duration: 5s;
-    font-weight: 100;
-    letter-spacing: 2%; }
+    animation-duration: 5s; }
 
 #reviews {
   background-color: rgba(238, 10, 10, 0.753);
@@ -318,6 +316,13 @@ h1 {
   grid-area: a1;
   width: 90%;
   margin: auto; }
+
+.menu {
+  background-image: url(../imagenes.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: fixed; }
 
 #platos {
   display: flex;
@@ -562,6 +567,9 @@ input[type=submit]:hover, [type=reset]:hover {
     grid-template-columns: 100%;
     grid-template-rows: 0.2fr auto auto auto 0.2fr;
     grid-template-areas: "header" "main"   "aside" "otro" "footer"; }
+  footer li {
+    padding: 0;
+    margin: 0; }
   #fondouno main {
     grid-area: main; }
   h1 {
@@ -570,7 +578,7 @@ input[type=submit]:hover, [type=reset]:hover {
     width: 50%;
     margin: 10% auto;
     transition: font-size 0.2s ease-in-out; }
-  .thin {
+  .thin, #frase p {
     font-size: 2.5rem;
     letter-spacing: 0; }
   header {

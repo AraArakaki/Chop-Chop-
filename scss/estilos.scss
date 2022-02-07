@@ -32,8 +32,7 @@ aside {
 }
 
 .infoMain{
-    width:90%;
-    margin:auto;
+    @include center(90%);
 }
  
 h2{
@@ -65,7 +64,7 @@ a {
 /* HEADER Y NAV */
 
 header{
-    animation-duration: 2s;
+    animation-duration: 1s;
     grid-area: header;
     background-color: rgba(0, 0, 0, 0.856); 
     position:sticky;
@@ -156,7 +155,7 @@ footer{
     color:black;
     
     & ul{    
-        margin: 2% 0 0 0;
+        margin: 20px 0 5px;
         padding:0;
         
         & li{
@@ -196,7 +195,7 @@ h1{
 
 .thin{
     font-weight: 100;    
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 #botondeli{
@@ -223,8 +222,9 @@ h1{
 
     & p{
     @include texto(black, 1.4rem, center, 2rem);
-    font-weight: 100;
-    letter-spacing: 2%;
+    @extend .thin;
+    // font-weight: 100;
+    // letter-spacing: 2%;
     }
 }
 
@@ -320,6 +320,11 @@ h1{
     grid-area:a1 ;
     @include center(90%);
 }
+.menu{
+    background-image: url(../imagenes.jpg);
+    @include backImg;
+
+}
 
 #platos{
     @include flex(row, nowrap, space-between, center);
@@ -357,7 +362,6 @@ table{
     text-align: left;
     padding-top:20px;
     transition: height .5s ease;
-
 }
 
 .RowDescripcion{
@@ -588,6 +592,13 @@ input[type=submit]:hover, [type=reset]:hover{
                             "otro"
                             "footer";
     }
+    
+    footer{
+        & li{
+            padding:0;
+            margin:0;
+        }
+    }
 
     #fondouno main{
         grid-area:main;
@@ -779,7 +790,7 @@ input[type=submit]:hover, [type=reset]:hover{
     
     .table-platos{
         display:table;
-        @include center (80%)
+        @include center (80%);
         font-size: 1rem;
         text-align: left;
         padding:5% 0;
