@@ -169,7 +169,7 @@ footer {
 
 /* HOME */
 #fondouno {
-  background-image: url(../imagenes/chochin.jpg);
+  background-image: url(../imagenes/Chochin.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -308,29 +308,64 @@ h1 {
 
 #photos {
   background-color: white;
-  height: 45%; }
+  height: 100vh; }
 
 .galeria {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: space-around;
   justify-content: center;
-  padding: 5% 0; }
+  padding: 5%;
+  row-gap: 2vw;
+  column-gap: 1vw; }
+
+.container_img {
+  position: relative;
+  width: 280px; }
 
 .imgphoto {
   width: 280px;
-  height: 250px;
+  height: 280px;
   object-fit: cover;
-  padding: 0.5%; }
+  display: block; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: .5s ease; }
+
+.container_img:hover .overlay {
+  opacity: 1; }
+
+.text {
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  padding: 10%;
+  text-align: center; }
 
 #BotonCovid {
   background-color: black;
   position: fixed;
   bottom: 15px;
   left: 15px;
-  color: white; }
+  color: white;
+  border-radius: 5%; }
+  #BotonCovid:hover {
+    background-color: rgba(238, 10, 10, 0.753); }
 
 .offcanvas-body {
   color: black;
@@ -397,21 +432,29 @@ h1 {
 
 table {
   width: 90%;
-  font-size: 1rem;
   text-align: left;
-  padding-top: 20px;
   transition: height .5s ease; }
+
+th {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border-bottom: 0; }
+
+td {
+  border-bottom: 0; }
 
 .RowDescripcion {
   font-size: 0.8rem;
+  line-height: 0.5rem;
   font-weight: 200;
   font-style: italic;
-  padding-top: 5px; }
+  height: 0.8rem; }
 
 .ProductoMenu, .precio {
-  border-bottom: 1px solid #4b4949;
-  text-transform: uppercase;
-  padding-top: 15px; }
+  font-size: 1rem;
+  line-height: 1.3rem;
+  margin-top: 5rem;
+  height: 1rem; }
 
 .table-platos {
   display: none; }
@@ -438,12 +481,6 @@ table {
   padding: 2%;
   color: white;
   text-align: center; }
-
-.precio {
-  text-align: right; }
-
-th {
-  font-size: 1.25rem; }
 
 /*  NOSOTROS */
 infoMain p {
@@ -516,9 +553,6 @@ infoMain p {
   overflow: hidden;
   transition: .3s; }
 
-.catering .carousel {
-  z-index: -1; }
-
 .catering .infoMain p {
   animation-duration: 2s;
   padding: 10px 0; }
@@ -531,7 +565,7 @@ infoMain p {
     color: white; }
 
 #contacto {
-  background: linear-gradient(to right, rgba(255, 255, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.001), rgba(0, 0, 0, 0.842)), url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -703,10 +737,8 @@ input[type=submit]:hover, [type=reset]:hover {
       transform: translateX(-500vw); }
     100% {
       transform: translateX(0); } }
-  .imgphoto {
-    width: 480px; }
   #photos {
-    height: 75%; }
+    height: 100vh; }
   /* NOSOTROS */
   #nosotros main {
     grid-area: main; }
