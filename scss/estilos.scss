@@ -51,6 +51,8 @@ h4{
 
 .upCase{
     text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 2%;
 }
 
 li {
@@ -59,6 +61,10 @@ li {
 
 a {
     @include alinks (white);
+}
+
+p{
+    @include texto (inherit, 1rem, justify, 1.3rem)
 }
 
 /* HEADER Y NAV */
@@ -72,6 +78,7 @@ header{
     width:100%;
     @include flex(row, nowrap, center, space-between);
     margin-bottom: 2%;
+    z-index: 2;
 }
 
 #logo img{
@@ -91,6 +98,7 @@ header{
 
         & a {
             @include weight(1.1rem, 300);
+            @extend .upCase;
 
             &:hover{
                 color:$yellow;
@@ -144,7 +152,6 @@ nav .icono-menu {
 
 footer{
     grid-area: footer;
-    font-size: 0.5rem;
     animation-duration: 5s;
     @include flex (column, nowrap, center, center);
     background-color: #fff;
@@ -168,11 +175,15 @@ footer{
         height:25px;
         width:25px;
     }
+
+    & p{
+        font-size: 0.5rem;
+    }
 }
 /* HOME */
 
 #fondouno{
-    background-image: url(../imagenes/Chochin.jpg);
+    background-image: url(../imagenes/chochin.jpg);
     @include backImg;
     color:white;
     width:100%;
@@ -223,46 +234,85 @@ h1{
     & p{
     @include texto(black, 1.4rem, center, 2rem);
     @extend .thin;
-    // font-weight: 100;
-    // letter-spacing: 2%;
     }
 }
 
 #reviews{
     background-color: $red;
-    width:100%;
-    padding:3%;   
-    overflow-x:hidden; 
+    height:400px;
+    padding:3%; 
+    overflow: hidden;  
+
+}
+.Carousel{
+    display: flex;
+    flex-direction: row;
+    width:90vw;
+    margin:3% auto;
+    animation: sliding 20s infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
 }
 
 #reseña{
-    @include flex(row, wrap, center, space-around);
-    animation-duration: 1s;  
-    overflow:overlay;
+    @include flex(row, nowrap, center, space-around);
+    row-gap:1%;
+    width:100vw;
+    margin:0;
+}
+
+.resena{
+    font-weight: 100;
+    width:100vw;
+    margin:0 2%;
+    & p{
+        @include texto(white, 1rem, center, 1.5rem);
+    }
+}
+
+
+@keyframes sliding {
+    0%{
+        transform: translateX(0vw);
+    }
+    15%{
+        transform: translateX(0vw);
+    }
+    25% {
+      transform: translateX(-90vw);
+    }
+    35% {
+        transform: translateX(-90vw);
+    }
+    50% {
+      transform: translateX(-180vw);
+    }
+    75% {
+      transform: translateX(-180vw);
+    }
+    95% {
+        transform: translateX(0vw);
+      }
+    100% {
+      transform: translateX(0);
+    }
 }
 
 #rating{
     @include flex(row, nowrap, center, space-around);
-    width:100%;
-    padding:1rem 0;
-    margin:0;
+    width:80%;
+    margin:2% auto;
 }
 
 .yellow{
     color:$yellow;
-    padding:0;
-}
-
-.resena{
-    @include texto(white, 1rem, justify, 1.5rem);
-    font-weight: 100;
-    width:20%;
 }
 
 .nombreresena{
-    text-align: right;
     padding-top: 1rem;
     font-style: italic;
+    font-weight: 600;
 }
 
 ::-webkit-scrollbar{
@@ -297,7 +347,7 @@ h1{
     background-color: black;
     position:fixed;
     bottom:15px;
-    right:15px;
+    left:15px;
     color:white;
 }
 
@@ -438,7 +488,6 @@ infoMain p{
     right: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
 }
 .span{
     width:580px;
@@ -508,7 +557,8 @@ infoMain p{
 }
 
 #contacto{    
-    background-image: url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
+    background: linear-gradient(to right, rgba($yellow, 0.01), rgba(black, 0.3), rgba(black, 0.4)),
+                url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
     @include backImg;
     color:white;       
 }
@@ -523,6 +573,7 @@ form input, textarea{
     padding:0.5rem;
     width:100%;
     @include weight(1rem, 300);
+    @extend .upCase;
     color:white;
     margin-top:3%;
 }
@@ -611,6 +662,7 @@ input[type=submit]:hover, [type=reset]:hover{
         margin:10% auto;
         transition:font-size 0.2s ease-in-out;
     }
+
     .thin{
         font-size: 2.5rem;
         letter-spacing: 0;
@@ -677,30 +729,75 @@ input[type=submit]:hover, [type=reset]:hover{
         background-color: rgba(248, 250, 252, 0.945);
         @include center(100%);
         padding:10%;  
-        }
+    }
         
     #frase p{
         font-size: 1rem;
         line-height: 21px;
-        }
-    
-    h4{
-        font-size:1.2rem;
     }
 
-    div.resena{
-        width:100%;
+    #fondouno h4{
+        font-size:1.3rem;
         margin:2%;
-        text-align:justify;
-        flex-direction: column;
-    }
- 
-    #reviews{
-        height:350px;
-        overflow-y:scroll;
-        overflow-x:hidden; 
     }
 
+    #reviews{
+        width:100vw;
+        height:300px;
+        margin:0;
+        overflow: hidden;
+
+    }
+
+    .Carousel{
+        width:100vw;
+        margin:auto;
+
+    }
+
+    #reseña{
+        width:auto;
+    }
+
+    .resena{
+        width:80vw;
+        margin:auto;
+        padding:0 5vw;
+
+        & p{
+            width:100%;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        
+    }
+
+    @keyframes sliding {
+        0%{
+            transform: translateX(0vw);
+        }
+        25% {
+          transform: translateX(-100vw);
+        }
+        35% {
+            transform: translateX(-100vw *2);
+        }
+        50% {
+          transform: translateX(-300vw);
+        }
+        75% {
+          transform: translateX(-400vw);
+        }
+        95% {
+            transform: translateX(-500vw);
+        }
+        100% {
+          transform: translateX(0);
+        }
+    }
+    
     .imgphoto{
         width:480px;
     }
@@ -822,8 +919,11 @@ input[type=submit]:hover, [type=reset]:hover{
     } 
 
     /* CATERING */
+
     .catering main{
         grid-area:main;
+        padding-bottom:30px;
+
     }
     .catering aside{
         grid-area:aside;
@@ -833,9 +933,12 @@ input[type=submit]:hover, [type=reset]:hover{
     #contacto main{
         grid-area:main;
     }
+
     #contacto aside{
         grid-area:aside;
-        text-align:center;
+    }
+    #contacto aside p{
+        text-align: center;
     }
 
     input[type=submit], [type=reset]{
@@ -903,16 +1006,31 @@ input[type=submit]:hover, [type=reset]:hover{
             font-size:1.6rem;  
         }
         
-        .resena{
-            width:45%;
-            margin:2%;
+        .Carousel{
+            width:100vw;
+            margin:auto;
+        }
+
+       #reseña{
+           width:300vw;
+       }
+       
+       .resena{
+            width:40vw;
+            margin:1% 5vw;
+            & p{    
+                width:100%;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+            }
         }   
-    
+        
         #reviews{
             height:350px;
-            overflow-y:scroll;
-            overflow-x:hidden; 
         }
+        
         .imgphoto{
             width:50%;
         }
@@ -1032,3 +1150,6 @@ input[type=submit]:hover, [type=reset]:hover{
         }
        
     }   
+
+
+    

@@ -37,8 +37,6 @@
 @mixin weight($size, $weight){
     font-size:$size;
     font-weight:$weight;
-    text-transform:uppercase;
-    letter-spacing:2px;
 }
 
 @mixin flex ($direccion, $wrap, $alignItems, $justifyCont) {

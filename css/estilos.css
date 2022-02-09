@@ -45,8 +45,10 @@ h4 {
   text-transform: uppercase;
   margin: 0; }
 
-.upCase {
-  text-transform: uppercase; }
+.upCase, #navPrincipal li a, form input, textarea {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 2%; }
 
 li {
   text-transform: uppercase;
@@ -57,6 +59,13 @@ a {
   text-decoration: none;
   letter-spacing: 2px;
   color: white; }
+
+p {
+  color: inherit;
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.3rem;
+  animation-duration: 5s; }
 
 /* HEADER Y NAV */
 header {
@@ -71,7 +80,8 @@ header {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2%; }
+  margin-bottom: 2%;
+  z-index: 2; }
 
 #logo img {
   width: 120px;
@@ -92,9 +102,7 @@ header {
     padding: 30px; }
     #navPrincipal li a {
       font-size: 1.1rem;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 2px; }
+      font-weight: 300; }
       #navPrincipal li a:hover {
         color: yellow;
         border-bottom: 2px solid yellow;
@@ -135,7 +143,6 @@ nav .icono-menu {
 /* FOOTER */
 footer {
   grid-area: footer;
-  font-size: 0.5rem;
   animation-duration: 5s;
   display: flex;
   flex-direction: column;
@@ -157,10 +164,12 @@ footer {
   footer img {
     height: 25px;
     width: 25px; }
+  footer p {
+    font-size: 0.5rem; }
 
 /* HOME */
 #fondouno {
-  background-image: url(../imagenes/Chochin.jpg);
+  background-image: url(../imagenes/chochin.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -219,18 +228,57 @@ h1 {
 
 #reviews {
   background-color: rgba(238, 10, 10, 0.753);
-  width: 100%;
+  height: 400px;
   padding: 3%;
-  overflow-x: hidden; }
+  overflow: hidden; }
+
+.Carousel {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  margin: 3% auto;
+  animation: sliding 20s infinite; }
+  .Carousel:hover {
+    animation-play-state: paused; }
 
 #reseña {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
-  animation-duration: 1s;
-  overflow: overlay; }
+  row-gap: 1%;
+  width: 100vw;
+  margin: 0; }
+
+.resena {
+  font-weight: 100;
+  width: 100vw;
+  margin: 0 2%; }
+  .resena p {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5rem;
+    animation-duration: 5s; }
+
+@keyframes sliding {
+  0% {
+    transform: translateX(0vw); }
+  15% {
+    transform: translateX(0vw); }
+  25% {
+    transform: translateX(-90vw); }
+  35% {
+    transform: translateX(-90vw); }
+  50% {
+    transform: translateX(-180vw); }
+  75% {
+    transform: translateX(-180vw); }
+  95% {
+    transform: translateX(0vw); }
+  100% {
+    transform: translateX(0); } }
 
 #rating {
   display: flex;
@@ -238,27 +286,16 @@ h1 {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
-  padding: 1rem 0;
-  margin: 0; }
+  width: 80%;
+  margin: 2% auto; }
 
 .yellow {
-  color: yellow;
-  padding: 0; }
-
-.resena {
-  color: white;
-  font-size: 1rem;
-  text-align: justify;
-  line-height: 1.5rem;
-  animation-duration: 5s;
-  font-weight: 100;
-  width: 20%; }
+  color: yellow; }
 
 .nombreresena {
-  text-align: right;
   padding-top: 1rem;
-  font-style: italic; }
+  font-style: italic;
+  font-weight: 600; }
 
 ::-webkit-scrollbar {
   background: transparent;
@@ -292,7 +329,7 @@ h1 {
   background-color: black;
   position: fixed;
   bottom: 15px;
-  right: 15px;
+  left: 15px;
   color: white; }
 
 .offcanvas-body {
@@ -435,8 +472,7 @@ infoMain p {
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1; }
+  height: 100%; }
 
 .span {
   width: 580px;
@@ -495,7 +531,7 @@ infoMain p {
     color: white; }
 
 #contacto {
-  background-image: url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
+  background: linear-gradient(to right, rgba(255, 255, 0, 0.01), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -512,8 +548,6 @@ form input, textarea {
   width: 100%;
   font-size: 1rem;
   font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   color: white;
   margin-top: 3%; }
 
@@ -631,17 +665,44 @@ input[type=submit]:hover, [type=reset]:hover {
   #frase p {
     font-size: 1rem;
     line-height: 21px; }
-  h4 {
-    font-size: 1.2rem; }
-  div.resena {
-    width: 100%;
-    margin: 2%;
-    text-align: justify;
-    flex-direction: column; }
+  #fondouno h4 {
+    font-size: 1.3rem;
+    margin: 2%; }
   #reviews {
-    height: 350px;
-    overflow-y: scroll;
-    overflow-x: hidden; }
+    width: 100vw;
+    height: 300px;
+    margin: 0;
+    overflow: hidden; }
+  .Carousel {
+    width: 100vw;
+    margin: auto; }
+  #reseña {
+    width: auto; }
+  .resena {
+    width: 80vw;
+    margin: auto;
+    padding: 0 5vw; }
+    .resena p {
+      width: 100%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical; }
+  @keyframes sliding {
+    0% {
+      transform: translateX(0vw); }
+    25% {
+      transform: translateX(-100vw); }
+    35% {
+      transform: translateX(-200vw); }
+    50% {
+      transform: translateX(-300vw); }
+    75% {
+      transform: translateX(-400vw); }
+    95% {
+      transform: translateX(-500vw); }
+    100% {
+      transform: translateX(0); } }
   .imgphoto {
     width: 480px; }
   #photos {
@@ -725,14 +786,16 @@ input[type=submit]:hover, [type=reset]:hover {
     display: none; }
   /* CATERING */
   .catering main {
-    grid-area: main; }
+    grid-area: main;
+    padding-bottom: 30px; }
   .catering aside {
     grid-area: aside; }
   /* CONTACTO */
   #contacto main {
     grid-area: main; }
   #contacto aside {
-    grid-area: aside;
+    grid-area: aside; }
+  #contacto aside p {
     text-align: center; }
   input[type=submit], [type=reset] {
     width: 50%;
@@ -772,13 +835,22 @@ input[type=submit]:hover, [type=reset]:hover {
     line-height: 1.6rem; }
   h4 {
     font-size: 1.6rem; }
+  .Carousel {
+    width: 100vw;
+    margin: auto; }
+  #reseña {
+    width: 300vw; }
   .resena {
-    width: 45%;
-    margin: 2%; }
+    width: 40vw;
+    margin: 1% 5vw; }
+    .resena p {
+      width: 100%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical; }
   #reviews {
-    height: 350px;
-    overflow-y: scroll;
-    overflow-x: hidden; }
+    height: 350px; }
   .imgphoto {
     width: 50%; }
   #photos {
