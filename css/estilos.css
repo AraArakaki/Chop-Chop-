@@ -348,14 +348,52 @@ h1 {
 
 .text {
   color: white;
-  font-size: 1rem;
-  text-transform: uppercase;
   letter-spacing: 3px;
   position: absolute;
-  bottom: 0%;
-  left: 0%;
-  padding: 10%;
-  text-align: center; }
+  bottom: 60px;
+  width: 280px;
+  margin: auto; }
+  .text p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center; }
+  .text span {
+    font-size: 0.4rem;
+    letter-spacing: 1px;
+    opacity: 0; }
+  .text .precio {
+    border: none;
+    text-decoration: line-through;
+    padding-top: 0;
+    display: inline-block; }
+  .text .descuento {
+    color: yellow;
+    font-weight: 600;
+    display: inline-block; }
+
+.contenedor_icono {
+  text-align: center;
+  width: 100%; }
+  .contenedor_icono button {
+    border: none;
+    color: white;
+    font-size: 0.7rem;
+    width: 15%;
+    background-color: rgba(0, 0, 0, 0.007);
+    margin: 3% 0; }
+    .contenedor_icono button:hover span {
+      opacity: 1; }
+  .contenedor_icono .nota {
+    font-size: 0.4rem; }
+
+.like_heart, .comprar {
+  filter: invert(100%);
+  margin: 5%;
+  width: 60%;
+  height: auto; }
+  .like_heart:hover, .comprar:hover {
+    width: 70%; }
 
 #BotonCovid {
   background-color: black;
@@ -432,8 +470,7 @@ h1 {
 
 table {
   width: 90%;
-  text-align: left;
-  transition: height .5s ease; }
+  text-align: left; }
 
 th {
   font-size: 1.25rem;
@@ -441,20 +478,23 @@ th {
   border-bottom: 0; }
 
 td {
-  border-bottom: 0; }
+  border-bottom: 0;
+  line-height: 1rem; }
 
 .RowDescripcion {
   font-size: 0.8rem;
-  line-height: 0.5rem;
   font-weight: 200;
-  font-style: italic;
-  height: 0.8rem; }
+  line-height: 1rem;
+  font-style: italic; }
 
 .ProductoMenu, .precio {
   font-size: 1rem;
-  line-height: 1.3rem;
-  margin-top: 5rem;
-  height: 1rem; }
+  line-height: 2rem;
+  padding-top: 0.5rem;
+  border-bottom: 1px dotted rgba(73, 71, 71, 0.411); }
+
+.precio {
+  text-align: center; }
 
 .table-platos {
   display: none; }
@@ -512,11 +552,10 @@ infoMain p {
   height: 100%; }
 
 .span {
-  width: 580px;
-  height: 250px;
+  width: 590px;
+  height: 280px;
   background-color: rgba(238, 10, 10, 0.753);
-  padding: 2% 3% 2% 3%;
-  border: 7px solid white; }
+  padding: 2% 3% 2% 3%; }
 
 .textoW {
   color: white;
@@ -792,7 +831,7 @@ input[type=submit]:hover, [type=reset]:hover {
     background-image: url(../imagenes/melonbingsu.jpeg); }
   #Bebidas {
     background-image: url(../imagenes/drink.jpeg); }
-  .table {
+  .table, th {
     display: none; }
   .table-platos {
     display: table;

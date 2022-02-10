@@ -365,17 +365,73 @@ h1{
     opacity: 1;
 }
 
-.text {
+.text{
     color: white;
-    font-size: 1rem;
-    text-transform: uppercase;
     letter-spacing: 3px;
     position: absolute;
-    bottom: 0%;
-    left: 0%;
-    padding:10%;
-    text-align: center;
+    bottom:60px;
+    width:280px;
+    margin:auto;
+
+    p{  
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin:0;
+        text-align: center;
+    }
+
+    span{
+        font-size: 0.4rem;
+        letter-spacing: 1px;
+
+        opacity:0;
+    }
+
+    .precio{
+        border:none; 
+        text-decoration: line-through;  
+        padding-top: 0;
+        display: inline-block;
+    }
+
+    .descuento{
+        color:$yellow;
+        font-weight: 600;
+        display: inline-block;
+
+    }
 }
+
+.contenedor_icono{
+    text-align: center;
+    width:100%;
+
+    button{
+        border:none;
+        color:white;
+        font-size: 0.7rem;
+        width:15%;
+        background-color: rgba(0, 0, 0, 0.007);
+        margin:3% 0;
+        &:hover span{
+            opacity:1;
+        }
+    }
+    .nota{
+        font-size: 0.4rem;
+    }
+}
+
+.like_heart , .comprar{
+    filter: invert(100%);
+    margin:5%;    
+    width:60%;
+    height:auto;
+        &:hover {
+            width:70%;
+        }
+}
+
 
 
 #BotonCovid{
@@ -449,7 +505,6 @@ h1{
 table{
     width:90%;
     text-align: left;
-    transition: height .5s ease;
 }
 
 th{
@@ -460,23 +515,25 @@ th{
 
 td{
     border-bottom: 0;
+    line-height: 1rem;
 }
 
 .RowDescripcion{
     font-size: 0.8rem;
-    line-height: 0.5rem;
     font-weight: 200;
+    line-height: 1rem;
     font-style: italic;
-    height:0.8rem;
-
 }
 
-.ProductoMenu, .precio{
+.ProductoMenu , .precio{
     font-size: 1rem;
-    line-height: 1.3rem;
-    margin-top:5rem;
-    height:1rem;
+    line-height: 2rem;
+    padding-top: 0.5rem;
+    border-bottom: 1px dotted rgba(73, 71, 71, 0.411);
+}
 
+.precio{
+    text-align: center;
 }
 
 
@@ -535,11 +592,11 @@ infoMain p{
     height: 100%;
 }
 .span{
-    width:580px;
-    height:250px;
+    width:590px;
+    height:280px;
     background-color:$red;
     padding:2% 3% 2% 3%;
-    border:7px solid white;
+    // border:7px solid white;
 }
     
 .textoW{
@@ -920,7 +977,7 @@ input[type=submit]:hover, [type=reset]:hover{
         background-image: url(../imagenes/drink.jpeg);   
     }
 
-    .table{
+    .table , th{
         display: none;
     }
     
