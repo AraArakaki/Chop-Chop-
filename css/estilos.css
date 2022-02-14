@@ -362,15 +362,17 @@ h1 {
     font-size: 0.4rem;
     letter-spacing: 1px;
     opacity: 0; }
-  .text .precio {
-    border: none;
-    text-decoration: line-through;
-    padding-top: 0;
-    display: inline-block; }
-  .text .descuento {
-    color: yellow;
-    font-weight: 600;
-    display: inline-block; }
+
+.precio {
+  border: none;
+  text-decoration: line-through;
+  padding-top: 0;
+  display: inline-block; }
+
+.descuento {
+  color: yellow;
+  font-weight: 600;
+  display: inline-block; }
 
 .contenedor_icono {
   text-align: center;
@@ -384,8 +386,14 @@ h1 {
     margin: 3% 0; }
     .contenedor_icono button:hover span {
       opacity: 1; }
-  .contenedor_icono .nota {
-    font-size: 0.4rem; }
+    .contenedor_icono button:active img {
+      opacity: 0;
+      transition: delay 3s; }
+    .contenedor_icono button:visited img {
+      background-color: black; }
+
+.nota {
+  font-size: 0.4rem; }
 
 .like_heart, .comprar {
   filter: invert(100%);
@@ -428,11 +436,7 @@ h1 {
   margin: auto; }
 
 .menu {
-  background-image: url(../imagenes.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-attachment: fixed; }
+  background-image: url(../imagenes.jpg); }
 
 #platos {
   display: flex;
@@ -471,6 +475,9 @@ h1 {
 table {
   width: 90%;
   text-align: left; }
+  table .precio {
+    text-decoration: none;
+    text-align: center; }
 
 th {
   font-size: 1.25rem;
@@ -493,9 +500,6 @@ td {
   padding-top: 0.5rem;
   border-bottom: 1px dotted rgba(73, 71, 71, 0.411); }
 
-.precio {
-  text-align: center; }
-
 .table-platos {
   display: none; }
 
@@ -505,6 +509,10 @@ td {
   left: 60%;
   height: 100%;
   z-index: -1; }
+  .ArtMenu:hover #textoMenuDia {
+    height: 250px;
+    bottom: 250px;
+    transition: ease-in-out 1s; }
 
 .ArtMenu img {
   height: 75%;
@@ -514,13 +522,18 @@ td {
 #textoMenuDia {
   display: block;
   position: relative;
-  bottom: 12%;
+  bottom: 14%;
   width: 100%;
-  height: 12%;
+  height: 14%;
   background-color: rgba(238, 10, 10, 0.753);
   padding: 2%;
   color: white;
   text-align: center; }
+  #textoMenuDia p {
+    padding: 0 30px; }
+  #textoMenuDia .precio {
+    text-align: center;
+    border-bottom: none; }
 
 /*  NOSOTROS */
 infoMain p {
@@ -557,7 +570,7 @@ infoMain p {
   background-color: rgba(238, 10, 10, 0.753);
   padding: 2% 3% 2% 3%; }
 
-.textoW {
+.textoW, #textoMenuDia p {
   color: white;
   font-size: 1rem;
   text-align: justify;
@@ -776,8 +789,17 @@ input[type=submit]:hover, [type=reset]:hover {
       transform: translateX(-500vw); }
     100% {
       transform: translateX(0); } }
+  .galeria {
+    padding: 0; }
+  .imgphoto, .overlay, .container_img, .text {
+    width: 100vw; }
   #photos {
-    height: 100vh; }
+    height: 330vh; }
+  #BotonCovid {
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+    width: 50px;
+    transition: all 0.5s ease-in-out; }
   /* NOSOTROS */
   #nosotros main {
     grid-area: main; }
@@ -922,10 +944,11 @@ input[type=submit]:hover, [type=reset]:hover {
       -webkit-box-orient: vertical; }
   #reviews {
     height: 350px; }
-  .imgphoto {
-    width: 50%; }
   #photos {
-    height: 75%; }
+    height: 100vh; }
+    #photos .imgphoto, #photos .container_img, #photos .overlay, #photos .text {
+      width: 40vw;
+      margin: 0; }
   /*  NOSOTROS */
   #nosotros main {
     grid-area: main;
