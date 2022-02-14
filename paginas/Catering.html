@@ -62,18 +62,37 @@
 
             <h2 id="titulo"> Catering </h2>
                 <p class="wow animate__fadeIn">
-                    Incredible food and drink is our passion, 
-                    so let us bring that fire to your next event. 
-                    Whether it’s a small, in-home celebration or a 
-                    full-scale wedding reception meal, our talented 
-                    team can help you create a menu and meal experience 
-                    for the books. For more information, contact Amanda 
-                    Niel at
-
+                    Chop Chop realiza todo tipo de eventos formales e informales; sociales o corporativos ya sea de grupos 
+                    reducidos o eventos multitudinarios. Somos innovadores en aplicar el concepto de fusion en nuestras preparaciones 
+                    y presentaciones, replicando la calidad de la cocina de un restaurant asiatico en cada evento. 
+                    Cocinamos bajo parámetros de calidad, estableciendo objetivos de mejora continua. 
                 </p>
 
-                <a href="../paginas/Contacto.html" class="botonPresupuesto upCase wow animate__slideInUp animate__fadeIn">consulte presupuesto</a>
-    
+
+                <form id="form_presupuesto">
+                    <h5>Complete el formulario para consultas sobre eventos y cenas privadas</h5>
+
+                    <input id="name" type="text" placeholder="NOMBRE COMPLETO">
+		            <input id="email" type="email" placeholder="E-MAIL">
+                    <input id="telefono" type="number" placeholder="TELEFONO">
+                    <input id="lugar" type="text" placeholder="LUGAR">
+                    <select id="tipo-evento" name="tevento">
+                        <option value="selleccione">SELECCIONE UN EVENTO</option>
+                        <option value="Eventos empresariales">Eventos empresariales</option>
+                        <option value="Cupleaños">Cumpleaños</option>
+                        <option value="Viandas">Viandas</option>
+                        <option value="Casamientos">Aniversarios</option>
+                        <option value="Casamientos">Otro</option>
+                    </select>
+                    <input id="fecha" type="date" value="fecha">
+                    
+                    <input id="submit" type="submit" value="Presupuesto">
+                </form>
+
+                <!-- <p>Consulte sobre los platos que desea que se sirvan en su evento y trabajaremos con usted para asegurarnos 
+                    de que esté satisfecho. Le pedimos que haga su pedido con al menos 5 días de anticipación.
+                </p> -->
+
         </section>
             
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
@@ -120,7 +139,7 @@
 
      <footer>
              
-        <button id="BotonCovid"class="btn BotonCovid" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">COVID-19</button>
+        <button id="BotonCovid"class="btn BotonCovid" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">COVID 19</button>
         <ul>
             <li><a href="https://instagram.com"><img src="../imagenes/instagram.png" alt="Logo Instagram"></a>
             </li>

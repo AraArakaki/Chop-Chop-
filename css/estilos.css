@@ -473,8 +473,7 @@ h1 {
   margin: auto; }
 
 table {
-  width: 90%;
-  text-align: left; }
+  width: 90%; }
   table .precio {
     text-decoration: none;
     text-align: center; }
@@ -508,7 +507,7 @@ td {
   top: 100px;
   left: 60%;
   height: 100%;
-  z-index: -1; }
+  z-index: 1; }
   .ArtMenu:hover #textoMenuDia {
     height: 250px;
     bottom: 250px;
@@ -517,7 +516,8 @@ td {
 .ArtMenu img {
   height: 75%;
   width: 100%;
-  object-fit: cover; }
+  object-fit: cover;
+  border-radius: 5px; }
 
 #textoMenuDia {
   display: block;
@@ -528,7 +528,8 @@ td {
   background-color: rgba(238, 10, 10, 0.753);
   padding: 2%;
   color: white;
-  text-align: center; }
+  text-align: center;
+  border-radius: 5px; }
   #textoMenuDia p {
     padding: 0 30px; }
   #textoMenuDia .precio {
@@ -544,10 +545,12 @@ infoMain p {
   animation-duration: 5s; }
 
 #nosotros main {
-  grid-area: a2; }
+  grid-area: a2;
+  width: 100%; }
 
 #nosotros aside {
-  grid-area: a1; }
+  grid-area: a1;
+  width: 100%; }
 
 .video {
   position: relative;
@@ -579,31 +582,50 @@ infoMain p {
   font-weight: 200; }
 
 /* CATERING */
-.botonPresupuesto {
-  color: black;
-  border: 2px solid black;
-  border-radius: 2px;
-  padding: 2%;
-  margin: 20px 0 30px 0; }
-  .botonPresupuesto:hover {
-    background-color: #020200;
-    border-color: #070700;
-    color: white;
-    transition: .2s; }
+#form_presupuesto {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.473);
+  border-bottom: none;
+  padding-top: 5%; }
+  #form_presupuesto h5 {
+    color: black;
+    text-transform: uppercase;
+    width: 70%;
+    margin: 2% auto; }
+  #form_presupuesto #tipo-evento, #form_presupuesto #fecha {
+    border: none;
+    background-color: white; }
+  #form_presupuesto #name, #form_presupuesto #email, #form_presupuesto #telefono, #form_presupuesto #tipo-evento, #form_presupuesto #fecha, #form_presupuesto #lugar {
+    color: black;
+    width: 40%;
+    display: inline-block;
+    margin: 2% 0.5%;
+    height: 2rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8); }
+    #form_presupuesto #name:hover, #form_presupuesto #email:hover, #form_presupuesto #telefono:hover, #form_presupuesto #tipo-evento:hover, #form_presupuesto #fecha:hover, #form_presupuesto #lugar:hover {
+      border-bottom: 2px solid yellow; }
+  #form_presupuesto #submit {
+    background-color: black;
+    width: 100%; }
+    #form_presupuesto #submit:hover {
+      background-color: yellow; }
 
 .catering main {
   grid-area: a1 a3;
-  height: 100%; }
+  height: 150%; }
 
 .catering aside {
   grid-area: a2; }
 
 .catering .side img {
   width: 100%;
-  height: 480px;
+  height: 550px;
   object-fit: cover;
   overflow: hidden;
-  transition: .3s; }
+  transition: .3s;
+  border-radius: 3px; }
 
 .catering .infoMain p {
   animation-duration: 2s;
@@ -655,7 +677,7 @@ input[type=submit], [type=reset] {
   border: 2px solid #f3efef;
   background-color: rgba(255, 255, 255, 0);
   float: right;
-  margin-right: 2px;
+  margin: 2% 0.5% 5% 0.5%;
   color: white; }
 
 input[type=submit]:hover, [type=reset]:hover {
@@ -669,13 +691,16 @@ input[type=submit]:hover, [type=reset]:hover {
   padding: 20px 0px 20px 10px;
   line-height: 1.8rem;
   font-size: 1.2rem;
-  font-weight: 400; }
+  font-weight: 400;
+  height: 500px; }
 
 .datoscontacto {
   font-size: 0.8rem; }
 
 .mapa {
+  padding: 0;
   width: 100%;
+  height: 480px;
   grid-area: a3 / span 2; }
 
 /* MEDIA QUERY */
@@ -757,11 +782,11 @@ input[type=submit]:hover, [type=reset]:hover {
   #reviews {
     width: 100vw;
     height: 300px;
-    margin: 0;
+    margin: 0%;
     overflow: hidden; }
   .Carousel {
     width: 100vw;
-    margin: auto; }
+    margin: 0; }
   #reseña {
     width: auto; }
   .resena {
@@ -868,28 +893,41 @@ input[type=submit]:hover, [type=reset]:hover {
     height: 100%;
     width: 50px;
     z-index: 1; }
+    .ArtMenu:hover {
+      height: 100vh;
+      left: 0;
+      top: 300px; }
+    .ArtMenu textoMenuDia {
+      width: 100vw;
+      height: 100vh; }
     .ArtMenu img {
       display: none; }
   #textoMenuDia {
-    height: 45px;
-    padding: 7%; }
-  h4 {
-    font-size: .7rem; }
-  h5 {
-    display: none; }
+    height: 30px;
+    padding: 7%;
+    overflow: hidden; }
   /* CATERING */
   .catering main {
     grid-area: main;
+    width: 90%;
     padding-bottom: 30px; }
+  #form_presupuesto {
+    border: none; }
+    #form_presupuesto h5 {
+      width: 100%; }
+    #form_presupuesto #name, #form_presupuesto #email, #form_presupuesto #telefono, #form_presupuesto #tipo-evento, #form_presupuesto #fecha, #form_presupuesto #lugar {
+      width: 100%; }
   .catering aside {
-    grid-area: aside; }
+    grid-area: aside;
+    height: 300px; }
   /* CONTACTO */
   #contacto main {
     grid-area: main; }
-  #contacto aside {
-    grid-area: aside; }
-  #contacto aside p {
-    text-align: center; }
+  .infoContacto {
+    grid-area: aside;
+    height: 400px; }
+    .infoContacto p {
+      text-align: center; }
   input[type=submit], [type=reset] {
     width: 50%;
     margin: 2% auto; } }
@@ -969,7 +1007,7 @@ input[type=submit]:hover, [type=reset]:hover {
   /* CATERING */
   .catering main {
     grid-area: main;
-    height: 400px; }
+    height: 600px; }
   .catering .side {
     grid-area: aside;
     width: 100%; }
@@ -980,12 +1018,12 @@ input[type=submit]:hover, [type=reset]:hover {
   #contacto main {
     grid-area: main; }
   #contacto aside {
-    grid-area: aside;
-    text-align: center; }
+    grid-area: aside; }
   .mapa {
     width: 100%;
     grid-area: otro; }
   .infoContacto {
+    text-align: center;
     padding: 2%;
     font-weight: 100;
     line-height: 30px; }
@@ -1006,14 +1044,21 @@ input[type=submit]:hover, [type=reset]:hover {
       #platos li a {
         font-size: 1rem; }
   .ArtMenu {
-    top: 160px;
+    bottom: 100px;
     left: 85%;
-    height: 100%; }
+    height: 100%;
+    width: 70px; }
+    .ArtMenu:hover #textoMenuDia {
+      width: 100vw;
+      height: 250px;
+      bottom: 100px;
+      right: 400%; }
     .ArtMenu img {
+      display: none;
       height: 10%;
-      width: 100%; }
+      width: 70px; }
   #textoMenuDia {
-    width: 100%;
+    width: 70px;
     height: 10%;
     padding: 10%; }
     #textoMenuDia h4 {
