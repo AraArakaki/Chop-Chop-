@@ -311,7 +311,7 @@ h1 {
   height: 100vh; }
 
 .galeria {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -445,7 +445,7 @@ h1 {
   align-items: space-between;
   justify-content: center;
   column-gap: 2%;
-  width: 100%;
+  width: 50vw;
   margin: auto;
   position: sticky;
   top: 98px;
@@ -455,11 +455,12 @@ h1 {
     border: 2px solid black;
     border-radius: 2px;
     padding: 2%;
-    width: 50%;
+    width: 100vw;
     background-color: white;
     text-align: center; }
     #platos li a {
-      color: black; }
+      color: black;
+      font-size: 1rem; }
     #platos li:hover {
       color: black;
       background-color: yellow;
@@ -517,7 +518,7 @@ td {
   height: 75%;
   width: 100%;
   object-fit: cover;
-  border-radius: 5px; }
+  border-radius: 3px; }
 
 #textoMenuDia {
   display: block;
@@ -583,7 +584,7 @@ infoMain p {
 
 /* CATERING */
 #form_presupuesto {
-  width: 90%;
+  width: 100%;
   margin: auto;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.473);
@@ -614,14 +615,14 @@ infoMain p {
 
 .catering main {
   grid-area: a1 a3;
-  height: 150%; }
+  height: 100vh; }
 
 .catering aside {
   grid-area: a2; }
 
 .catering .side img {
   width: 100%;
-  height: 550px;
+  height: 500px;
   object-fit: cover;
   overflow: hidden;
   transition: .3s;
@@ -779,14 +780,13 @@ input[type=submit]:hover, [type=reset]:hover {
   #fondouno h4 {
     font-size: 1.3rem;
     margin: 2%; }
-  #reviews {
+  section #reviews {
     width: 100vw;
-    height: 300px;
-    margin: 0%;
+    height: 250px;
+    margin: 0;
     overflow: hidden; }
   .Carousel {
-    width: 100vw;
-    margin: 0; }
+    width: 90vw; }
   #reseña {
     width: auto; }
   .resena {
@@ -820,11 +820,24 @@ input[type=submit]:hover, [type=reset]:hover {
     width: 100vw; }
   #photos {
     height: 330vh; }
+  .contenedor_icono button img {
+    width: 35%; }
+    .contenedor_icono button img:hover {
+      width: 37%; }
+  .like_heart, .comprar {
+    filter: invert(100%);
+    margin: 5%;
+    width: 10%;
+    height: auto; }
+    .like_heart:hover, .comprar:hover {
+      width: 70%; }
   #BotonCovid {
     font-size: 0.7rem;
     line-height: 0.8rem;
     width: 50px;
     transition: all 0.5s ease-in-out; }
+  .container_img img {
+    width: 100%; }
   /* NOSOTROS */
   #nosotros main {
     grid-area: main; }
@@ -851,7 +864,7 @@ input[type=submit]:hover, [type=reset]:hover {
     position: static;
     top: 0px; }
     #platos a {
-      font-size: 2.5rem;
+      font-size: 4rem;
       color: white !important;
       text-shadow: 2px 2px rgba(61, 59, 59, 0.452);
       font-weight: 400;
@@ -888,24 +901,9 @@ input[type=submit]:hover, [type=reset]:hover {
     text-align: left;
     padding: 5% 0; }
   .ArtMenu {
-    top: 170px;
-    left: 90%;
-    height: 100%;
-    width: 50px;
-    z-index: 1; }
-    .ArtMenu:hover {
-      height: 100vh;
-      left: 0;
-      top: 300px; }
-    .ArtMenu textoMenuDia {
-      width: 100vw;
-      height: 100vh; }
-    .ArtMenu img {
-      display: none; }
+    display: none; }
   #textoMenuDia {
-    height: 30px;
-    padding: 7%;
-    overflow: hidden; }
+    display: none; }
   /* CATERING */
   .catering main {
     grid-area: main;
@@ -924,8 +922,7 @@ input[type=submit]:hover, [type=reset]:hover {
   #contacto main {
     grid-area: main; }
   .infoContacto {
-    grid-area: aside;
-    height: 400px; }
+    grid-area: aside; }
     .infoContacto p {
       text-align: center; }
   input[type=submit], [type=reset] {
@@ -935,7 +932,7 @@ input[type=submit]:hover, [type=reset]:hover {
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   body {
     grid-template-columns: 100%;
-    grid-template-rows: 0.2fr auto 300px auto 0.2fr;
+    grid-template-rows: 0.2fr auto 350px auto 0.2fr;
     grid-template-areas: "header" "main"  "aside"  "otro" "footer"; }
   #fondouno main {
     grid-area: main; }
@@ -983,7 +980,7 @@ input[type=submit]:hover, [type=reset]:hover {
   #reviews {
     height: 350px; }
   #photos {
-    height: 100vh; }
+    height: 90%; }
     #photos .imgphoto, #photos .container_img, #photos .overlay, #photos .text {
       width: 40vw;
       margin: 0; }
@@ -1007,6 +1004,7 @@ input[type=submit]:hover, [type=reset]:hover {
   /* CATERING */
   .catering main {
     grid-area: main;
+    width: 90%;
     height: 600px; }
   .catering .side {
     grid-area: aside;
@@ -1014,6 +1012,8 @@ input[type=submit]:hover, [type=reset]:hover {
   .catering .side img {
     width: 100%;
     height: 400px; }
+  #form_presupuesto {
+    width: 100%; }
   /* CONTACTO */
   #contacto main {
     grid-area: main; }
@@ -1021,48 +1021,62 @@ input[type=submit]:hover, [type=reset]:hover {
     grid-area: aside; }
   .mapa {
     width: 100%;
-    grid-area: otro; }
+    grid-area: otro;
+    height: 50%;
+    margin: 10%; }
   .infoContacto {
-    text-align: center;
     padding: 2%;
     font-weight: 100;
     line-height: 30px; }
+    .infoContacto p {
+      text-align: center; }
   /* MENU */
   .menu main {
     grid-area: main;
     height: 100%;
-    width: 70%;
+    width: 100%;
     margin-left: 10%; }
   #navPrincipal {
-    width: 100%; }
+    width: 100vw; }
   #platos {
     top: 110px;
-    width: 90%;
-    align-items: space-between; }
+    width: 50%;
+    align-items: space-between;
+    margin: 0; }
     #platos li {
-      margin-right: 0; }
+      width: 50%; }
       #platos li a {
-        font-size: 1rem; }
+        letter-spacing: 0; }
   .ArtMenu {
-    bottom: 100px;
+    top: 122px;
     left: 85%;
-    height: 100%;
-    width: 70px; }
-    .ArtMenu:hover #textoMenuDia {
-      width: 100vw;
-      height: 250px;
-      bottom: 100px;
-      right: 400%; }
+    height: 80px;
+    width: 70px;
+    overflow: hidden; }
+    .ArtMenu:hover {
+      height: 200px;
+      width: 150px;
+      top: 132px;
+      left: 75%; }
+      .ArtMenu:hover #textoMenuDia {
+        height: 70px;
+        bottom: 70px;
+        padding: 2%; }
+    .ArtMenu:hover img {
+      display: inline; }
     .ArtMenu img {
       display: none;
-      height: 10%;
-      width: 70px; }
+      height: 100%;
+      width: 100%; }
   #textoMenuDia {
-    width: 70px;
-    height: 10%;
+    width: 100%;
+    height: 100px;
     padding: 10%; }
+    #textoMenuDia p:nth-child(3) {
+      display: none; }
     #textoMenuDia h4 {
-      font-size: 0.9rem; }
+      font-size: 0.9rem;
+      padding-top: 1rem; }
     #textoMenuDia h5 {
       font-size: .8rem;
       margin: 0; }
