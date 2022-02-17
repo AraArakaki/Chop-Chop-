@@ -190,7 +190,8 @@ h1 {
   text-shadow: 1px 1px 10px #0a0a0a9c;
   line-height: 4.5rem;
   width: 45%;
-  margin: 100px auto; }
+  margin: 100px auto;
+  letter-spacing: 5px; }
 
 .thin, #frase p {
   font-weight: 100;
@@ -203,10 +204,10 @@ h1 {
   color: white;
   border: 2px solid white;
   border-radius: 2px;
-  padding: 2%;
+  padding: 1%;
   width: 250px;
   margin: 40px auto;
-  background-color: rgba(2, 2, 2, 0.137); }
+  background-color: rgba(2, 2, 2, 0.445); }
   #botondeli:hover {
     background-color: rgba(238, 10, 10, 0.753);
     transition: all .5s linear; }
@@ -228,7 +229,7 @@ h1 {
 
 #reviews {
   background-color: rgba(238, 10, 10, 0.753);
-  height: 400px;
+  height: auto;
   padding: 3%;
   overflow: hidden; }
 
@@ -308,10 +309,10 @@ h1 {
 
 #photos {
   background-color: white;
-  height: 100vh; }
+  height: auto; }
 
 .galeria {
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -454,7 +455,7 @@ h1 {
     color: black;
     border: 2px solid black;
     border-radius: 2px;
-    padding: 2%;
+    padding: 1%;
     width: 100vw;
     background-color: white;
     text-align: center; }
@@ -864,7 +865,7 @@ input[type=submit]:hover, [type=reset]:hover {
     position: static;
     top: 0px; }
     #platos a {
-      font-size: 4rem;
+      font-size: 2.5rem;
       color: white !important;
       text-shadow: 2px 2px rgba(61, 59, 59, 0.452);
       font-weight: 400;
@@ -916,13 +917,13 @@ input[type=submit]:hover, [type=reset]:hover {
     #form_presupuesto #name, #form_presupuesto #email, #form_presupuesto #telefono, #form_presupuesto #tipo-evento, #form_presupuesto #fecha, #form_presupuesto #lugar {
       width: 100%; }
   .catering aside {
-    grid-area: aside;
-    height: 300px; }
+    grid-area: aside; }
   /* CONTACTO */
   #contacto main {
     grid-area: main; }
   .infoContacto {
-    grid-area: aside; }
+    grid-area: aside;
+    height: 100%; }
     .infoContacto p {
       text-align: center; }
   input[type=submit], [type=reset] {
@@ -932,7 +933,7 @@ input[type=submit]:hover, [type=reset]:hover {
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   body {
     grid-template-columns: 100%;
-    grid-template-rows: 0.2fr auto 350px auto 0.2fr;
+    grid-template-rows: 0.2fr auto auto auto 0.2fr;
     grid-template-areas: "header" "main"  "aside"  "otro" "footer"; }
   #fondouno main {
     grid-area: main; }
@@ -979,11 +980,9 @@ input[type=submit]:hover, [type=reset]:hover {
       -webkit-box-orient: vertical; }
   #reviews {
     height: 350px; }
-  #photos {
-    height: 90%; }
-    #photos .imgphoto, #photos .container_img, #photos .overlay, #photos .text {
-      width: 40vw;
-      margin: 0; }
+  #photos .imgphoto, #photos .container_img, #photos .overlay, #photos .text {
+    width: 40vw;
+    margin: 0; }
   /*  NOSOTROS */
   #nosotros main {
     grid-area: main;
@@ -1021,9 +1020,7 @@ input[type=submit]:hover, [type=reset]:hover {
     grid-area: aside; }
   .mapa {
     width: 100%;
-    grid-area: otro;
-    height: 50%;
-    margin: 10%; }
+    grid-area: otro; }
   .infoContacto {
     padding: 2%;
     font-weight: 100;
@@ -1034,7 +1031,7 @@ input[type=submit]:hover, [type=reset]:hover {
   .menu main {
     grid-area: main;
     height: 100%;
-    width: 100%;
+    width: auto;
     margin-left: 10%; }
   #navPrincipal {
     width: 100vw; }
