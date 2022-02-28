@@ -26,7 +26,7 @@ body{
 aside {
     grid-area: a2;
 }
-
+    
 .galeria {
    grid-area: a3 / span 2;
 }
@@ -37,6 +37,7 @@ aside {
  
 h2{
     @include titulos (2.5rem,black);
+    letter-spacing: 2px;
 }
 
 h3{ 
@@ -45,7 +46,7 @@ h3{
 }
 
 h4{
-    @include titulos (1.5rem, white);
+    @include titulos (1.5rem, $white);
     margin: 0;
 }
 
@@ -60,7 +61,7 @@ li {
 }
 
 a {
-    @include alinks (white);
+    @include alinks ($white);
 }
 
 p{
@@ -128,7 +129,7 @@ nav .icono-menu {
         & .linea {
 	        width: 30px;
 	        height: 3px;
-	        background-color: #fff;
+	        background-color: $white;
 	        margin: 5px;
 	        border-radius: 3px;
         }
@@ -151,10 +152,10 @@ nav .icono-menu {
 /* FOOTER */
 
 footer{
-    grid-area: footer;
+    grid-area: footer footer;
     animation-duration: 5s;
     @include flex (column, nowrap, center, center);
-    background-color: #fff;
+    background-color:$white;
     height:70px;
     width:100%;
     position: fixed;
@@ -185,7 +186,7 @@ footer{
 #fondouno{
     background-image: url(../imagenes/Chochin.jpg);
     @include backImg;
-    color:white;
+    color:$white;
     width:100%;
 
     & main{
@@ -197,7 +198,7 @@ footer{
 }
 
 h1{ 
-    @include titulos (5rem, white);
+    @include titulos (5rem, $white);
     text-shadow: 1px 1px 10px #0a0a0a9c;
     line-height: 4.5rem;
     width: 45%;
@@ -212,21 +213,23 @@ h1{
 
 #botondeli{
     @include links;
-    @include boton (white,white);
+    @include boton ($white,$white);
+    font-size: 1.2rem;
     width:250px;
-    margin:40px auto;
+    margin: auto;
     background-color: rgba(2, 2, 2, 0.445);
 
     &:hover{
-        @include fondo($red);
+        @include fondo($yellow);
+        border:2px solid $yellow;
     }
-    & a:hover{
-        color:white;
+    &:hover a{
+        color:black;
     }
 }
 
 #frase{
-    background-color: rgba(248, 250, 252, 0.945);
+    background-color:rgba($white,0.9);
     width:90%;
     margin:2% auto 2%;
     padding:4%;
@@ -267,7 +270,7 @@ h1{
     width:100vw;
     margin:0 2%;
     & p{
-        @include texto(white, 1rem, center, 1.5rem);
+        @include texto($white, 1rem, center, 1.5rem);
     }
 }
 
@@ -325,7 +328,7 @@ h1{
     border:1px rgba(255, 255, 255, 0.301) solid;
 }
 #photos{
-    background-color: white;
+    background-color: $white;
     height:auto;
 }
 
@@ -341,12 +344,14 @@ h1{
     position:relative;
     width:280px;
 }
+
 .imgphoto {
     width:280px;
     height:280px;
     object-fit: cover;
     display: block;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -357,7 +362,7 @@ h1{
     width: 100%;
     height: 100%;
     opacity:0;
-    transition: .5s ease;
+    transition: 1s ease;
 }
   
 .container_img:hover .overlay {
@@ -365,7 +370,7 @@ h1{
 }
 
 .text{
-    color: white;
+    color: $white;
     letter-spacing: 3px;
     position: absolute;
     bottom:60px;
@@ -382,7 +387,6 @@ h1{
     span{
         font-size: 0.4rem;
         letter-spacing: 1px;
-
         opacity:0;
     }
 
@@ -408,7 +412,7 @@ h1{
 
     button{
         border:none;
-        color:white;
+        color:$white;
         font-size: 0.7rem;
         width:15%;
         background-color: rgba(0, 0, 0, 0.007);
@@ -445,7 +449,7 @@ h1{
     position:fixed;
     bottom:15px;
     left:15px;
-    color:white;
+    color:$white;
     border-radius: 5%;
     &:hover{
         background-color: $red;
@@ -460,27 +464,34 @@ h1{
 
 .logo-casa{
     width:40px;
+    height:auto;
 }
 
 .offcanvas-header{
     padding-bottom:0;
 }
 /* MENU */
-
+.menu{
+    background-color: $white;
+}
 .menu main{
     grid-area:a1 ;
     @include center(90%);
 }
 
-.menu{
-    background-image: url(../imagenes.jpg);
-
+.menu aside{
+    grid-area:a2;
 }
+
+// .menu{
+//     background: url(../imagenes/;
+//     @include backImg;
+// }
 
 #platos{
     @include flex(row, nowrap, space-between, center);
     column-gap: 2%;
-    @include center (50vw);
+    @include center (100%);
     position:sticky;
     top:98px;
     padding:10px 0;
@@ -488,12 +499,12 @@ h1{
     & li{
         @include boton(black, black);
         width:100vw;
-        background-color: white;
+        background-color: $white;
         text-align: center;
     
         & a{
         color:black;
-        font-size: 1rem;
+        font-size: 80%;
         }    
 
         &:hover{
@@ -510,7 +521,10 @@ h1{
 }
 
 table{
-    width:90%;
+    @include center (90%);
+    border-collapse: separate;
+    border-spacing: 10px 0;
+
     .precio{
         text-decoration: none;
         text-align:center;
@@ -531,13 +545,11 @@ td{
 .RowDescripcion{
     font-size: 0.8rem;
     font-weight: 200;
-    line-height: 1rem;
     font-style: italic;
 }
 
-.ProductoMenu , .precio{
+.ProductoMenu , .precio {
     font-size: 1rem;
-    line-height: 2rem;
     padding-top: 0.5rem;
     border-bottom: 1px dotted rgba(73, 71, 71, 0.411);
 }
@@ -556,7 +568,11 @@ td{
         height:250px;
         bottom:250px;
         transition:ease-in-out 1s;
+        & :nth-child(5){
+            display: inline-block;
+        }
     }
+
 }
 
 .ArtMenu img{
@@ -564,7 +580,6 @@ td{
     width:100%;
     object-fit:cover;
     border-radius: 3px;
-
 }
 
 #textoMenuDia{
@@ -575,14 +590,16 @@ td{
     height:14%;
     background-color:$red;
     padding:2%;
-    color:white;
+    color:$white;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 2px;
 
-    p{
-        padding:0 30px;
+    & :nth-child(5){   
+        display: none;
+        padding:10px;
         @extend .textoW;
     }
+
     .precio{
         text-align: center;
         border-bottom: none;
@@ -624,13 +641,14 @@ infoMain p{
     height:280px;
     background-color:$red;
     padding:2% 3% 2% 3%;
-    // border:7px solid white;
 }
-
+#nosotros{
+    background-color: $white;
+}
 
     
 .textoW{
-    @include texto(white, 1rem, justify, 1.3rem);
+    @include texto($white, 1rem, justify, 1.3rem);
     font-weight: 200;
 }
 
@@ -641,67 +659,93 @@ infoMain p{
     width:100%;
     margin:auto;
     text-align: center;
-    border:1px solid rgba(0, 0, 0, 0.473);
-    border-bottom: none;
-    padding-top:5%;
+    padding-top:2%;
+    // border: 2px solid black;
 
     h5{
         color:black;
         text-transform: uppercase;
-        width:70%;
-        margin: 2% auto;   
+        width:100%;
+        margin: 1% auto;   
     }
     
 
     #tipo-evento, #fecha{
         border:none;
-        background-color: white;
+        background-color: $white;
     }
 
-    #name, #email, #telefono, #tipo-evento, #fecha, #lugar{    
+    #name, #email, #telefono, #tipo-evento, #fecha, #lugar , #submit{    
         color:black;
-        width:40%;
+        width:45%;
         display: inline-block;   
-        margin:2% 0.5%;     
-        height:2rem;
-        border-bottom:2px solid rgba(0, 0, 0, 0.8); 
+        margin:1%;     
+        height:3rem;
+        border-bottom:1px solid rgba(0, 0, 0, 0.8); 
         &:hover {
-            border-bottom: 2px solid $yellow;
+            border: 1px solid $yellow;
         }  
     }
     
     #submit{
-        background-color:black;
-        width:100%;
+        border:2px solid black;
+        width: 95%;
+        background-color: $white;
+        font-weight: 500;
+
         &:hover{
             background-color: $yellow;
         }        
-    }    
+    }
+    
+    select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        background: url(../imagenes/flecha-hacia-abajo-para-navegar.png) 96% / 20% no-repeat;
+        background-size: 5%;
+    }
+    
 }
 
 .catering main{
     grid-area:a1 a3;
-    height:100vh;
+    height:100%;
 }
 
 .catering aside{
-    grid-area:a2;
+    grid-area:a2 a4;
 }
 
-.catering .side img{
+.catering{
+    background-color: $white;
+}
+.catering .carousel , .active , img{
     width:100%;
-    height:500px;
-    object-fit: cover;
-    overflow: hidden;
+    height:90vh;
+    object-fit:cover;
     transition:.3s;
     border-radius: 3px;
+    overflow: hidden;
 }
 
 .catering .infoMain p {
     animation-duration: 2s;
-    padding:10px 0;
+    display: block;
 }
 
+.detalle{
+    @extend .thin;
+    @include center(95%);
+    background-color: $red;
+    color:$white;
+    font-size: 0.9rem;
+    padding:2%;
+    margin-top:15px;
+    text-align: center;
+}
 
 /* CONTACTO */
 
@@ -710,15 +754,14 @@ infoMain p{
     width:70%;
     
     & h2{
-        color:white;
+        color:$white;
     }
 }
 
 #contacto{    
-    background: linear-gradient(to right, rgba(black, 0.001), rgba(0, 0, 0, 0.842)),
-                url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
+    background:url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
     @include backImg;
-    color:white;       
+    color:$white;       
 }
 
 #formC{
@@ -732,7 +775,7 @@ form input, textarea{
     width:100%;
     @include weight(1rem, 300);
     @extend .upCase;
-    color:white;
+    color:$white;
     margin-top:3%;
 }
 textarea{
@@ -742,8 +785,8 @@ textarea{
 input[type=text],[type=Email],[type=number]{
     height:40px;
     border:none;
-    background-color: rgba(255, 255, 255, 0);
-    border-bottom: 2px white solid;
+    background-color: transparent;
+    border-bottom: 2px $white solid;
 }
 
 input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
@@ -751,13 +794,13 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     border-color:yellow;
 }
 
-input[type=submit], [type=reset] {
+#contacto input[type=submit], [type=reset] {
     width:49%;
-    border:2px solid rgb(243, 239, 239);
-    background-color: rgba(255, 255, 255, 0);
+    border:2px solid $white;
+    background-color:transparent;
     float:right;    
     margin:2% 0.5% 5% 0.5%;
-    color: white;
+    color: $white;
 }
 
 input[type=submit]:hover, [type=reset]:hover{
@@ -769,15 +812,18 @@ input[type=submit]:hover, [type=reset]:hover{
 
 .infoContacto{
     grid-area:a2;
-    padding:20px 0px 20px 10px;
-    line-height: 1.8rem;
-    font-size:1.2rem;
-    font-weight: 400;
-    height:500px;
+    width:90%;
+    margin:auto;    
+    font-size: 3rem;
+    padding-left:40px;
+    text-transform: uppercase;
+    background-color:rgba(0, 0, 0, 0.589);
+
 }
 
 .datoscontacto{
     font-size:0.8rem;
+    padding-top:2rem;
 }
 
 .mapa{
@@ -789,6 +835,7 @@ input[type=submit]:hover, [type=reset]:hover{
 }
 
     /* MEDIA QUERY */
+
     @media screen and (max-width:480px) {
 
     h2{
@@ -797,7 +844,7 @@ input[type=submit]:hover, [type=reset]:hover{
 
     /* INDEX */        
     body{     
-        grid-template-columns:100%;
+        grid-template-columns:100vw;
         grid-template-rows: 0.2fr auto auto auto 0.2fr;
         grid-template-areas:"header"
                             "main"  
@@ -1013,6 +1060,11 @@ input[type=submit]:hover, [type=reset]:hover{
     }
     .span{
         padding:5% 10%;
+        overflow:scroll;
+            &::-webkit-scrollbar {
+                width:0;        
+                background: transparent;
+            }
     }
 
     /* MENU */
@@ -1027,32 +1079,33 @@ input[type=submit]:hover, [type=reset]:hover{
         width: 100%;
         padding:0;
         position:static;
-        top:0px;
-    
-        & a{
-            font-size: 2.5rem;
-            color:white !important;
-            text-shadow:2px 2px rgba(61, 59, 59, 0.452);
-            font-weight: 400;
-            background-image:none;
-        }
-    
-        & a:hover{
-            color:yellow;
-        }    
+        top:0px;  
         
         li{
-            width:400px;
+            width:100%;
             height:100px;
             padding: 5% 10% ;
             margin-top:2%; 
             border:none;
             background-size:cover;
             background-position: 50% 50%;
-        }
-        li:hover{
-            border:2px solid rgba(255, 255, 255, 0.534);
-        }    
+
+            & a{
+                font-size: 1.5rem;
+                color:$white;
+                text-shadow:-1px 2px rgba(20, 7, 7, 0.849);
+                font-weight: 400;
+                background-image:none;
+            }
+        
+            & a:hover{
+                color:yellow;
+            }  
+
+            &:hover{
+                border:1px solid rgba($white,0.9);
+            }
+        }      
     }
 
     #Entradas{
@@ -1078,55 +1131,77 @@ input[type=submit]:hover, [type=reset]:hover{
     
     .table-platos{
         display:table;
-        @include center (80%);
-        font-size: 1rem;
-        text-align: left;
-        padding:5% 0;
-    }
+        @include center (100%);
     
+        td{
+            font-size: 0.9rem;
+            line-height: 2rem;
+        }
+        .RowDescripcion{
+            font-size: 0.7rem;
+            line-height: 1.5rem;            
+        }
+    }
+
+
     .ArtMenu{
-        display: none;
-        // top:100px;
-        // left:80%;
-        // height:80px;
-        // width:80px;
-        // z-index: 1;
-        // overflow: hidden;
-        // &:hover{
-        //     height:100vh;
-        //     left:80%;
-        //     top:100px;}
+        top:70px;            
+        left:85%;
+        height:75px;
+        width:70px;
+        overflow: hidden;
+        border-radius: 2px;
+        box-shadow: -3px 3px rgba(0, 0, 0, 0.075);
+
+        &:hover{
+            height:50vh;
+            width:70vw;
+            top:70px;
+            left:25%;
+            #textoMenuDia{
+                height:250px;
+                bottom:230px;
+                padding:2%; 
+                overflow: hidden;
+                scrollbar-color: transparent;
+                & p{
+                    display: inline-block;
+                    font-size: 0.8rem;
+                    line-height: 1rem;
+                }
+            }
+            
+        }
+        &:hover img{
+            display: inline; 
+        }
         
-        // & textoMenuDia{
-        //     width:100vw;
-        //     height:100vh;}
-        
-        // & img{
-        //     display:none;
-        // }
+        & img{
+            display: none;
+            height:100%;
+            width:100%;   
+        }
     }
     
     #textoMenuDia{
-        display:none;
-        // height:100px;
-        // overflow: hidden;  
-        // h4{
-        //     font-size: 0.7rem;
-        //     font-weight: 600;
-        // } 
-        // h5{
-        //     font-size: 0.7rem;
-        //     padding:0;
-        // }
-        // .descuento{
-        //     padding:0;      
-        //     margin:0;
-        // }
-        // p:nth-child(3), p:first-child{
-        //     display: none;
-        // }
-    }
-     
+        width: 100%;
+        height:100px;
+        padding:10%;  
+                 
+        p{
+            display: none;
+        }
+        h4{
+            font-size: 0.9rem;
+            padding-top: 1rem;
+        }
+
+        h5{
+            font-size: .8rem;
+            margin: 0;
+        }
+    }  
+    
 
     /* CATERING */
 
@@ -1137,17 +1212,25 @@ input[type=submit]:hover, [type=reset]:hover{
     }
 
     #form_presupuesto{
-        border:none;
         h5{
             width:100%;
         }
         #name, #email, #telefono, #tipo-evento, #fecha, #lugar{  
             width:100%;
         }  
-
+        #submit{
+            width:100%;
+        }
     }
     .catering aside{
         grid-area:aside;
+    }
+
+    .detalle{
+        font-size: 0.9rem;
+        @include center(100%);
+        margin-top:15px;
+
     }
    
     /* CONTACTO */
@@ -1158,6 +1241,8 @@ input[type=submit]:hover, [type=reset]:hover{
     .infoContacto{
         grid-area:aside;
         height:100%;
+        padding-left:0;
+
         p{
             text-align: center;
         }
@@ -1269,7 +1354,7 @@ input[type=submit]:hover, [type=reset]:hover{
         }
         #nosotros aside{
             grid-area:aside;
-            height:100%;
+            height:400px;
             padding:2%;
         }
         
@@ -1328,23 +1413,20 @@ input[type=submit]:hover, [type=reset]:hover{
         /* MENU */
         .menu main{
             grid-area: main;
-            height:100%;
-            width:auto;    
-            margin-left:10%;    
         }
 
         #navPrincipal{
-            width:100vw;
+            width:100%;
         }
         
         #platos{
             top:110px;
-            width:50%;
+            width:100%;
             align-items: space-between;
             margin:0;
             
             & li{
-                width:50%;  
+                width:100%;  
                 & a{
                     letter-spacing: 0;
                 }                          
@@ -1353,10 +1435,13 @@ input[type=submit]:hover, [type=reset]:hover{
 
         .ArtMenu{
             top:122px;            
-            left:85%;
-            height:80px;
-            width:70px;
+            left:80%;
+            height:70px;
+            width:100px;
             overflow: hidden;
+            box-shadow: -1px 3px rgba(0, 0, 0, 0.1);
+
+
             &:hover{
                 height:200px;
                 width:150px;
@@ -1365,7 +1450,10 @@ input[type=submit]:hover, [type=reset]:hover{
                 #textoMenuDia{
                     height:70px;
                     bottom:70px;
-                    padding:2%; 
+                    padding:2%;
+                    h4{
+                        padding-top:5% ;
+                    } 
                 }
             }
             &:hover img{
@@ -1383,13 +1471,14 @@ input[type=submit]:hover, [type=reset]:hover{
             width: 100%;
             height:100px;
             padding:10%;  
-                     
+            overflow: hidden;
+
             p:nth-child(3){
                 display: none;
             }
             h4{
                 font-size: 0.9rem;
-                padding-top: 1rem;
+                padding-top: 15%;
             }
 
             h5{
