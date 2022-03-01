@@ -178,7 +178,7 @@ footer {
   color: #fafcf8;
   width: 100%; }
   #fondouno main {
-    grid-column: a1 / span 2;
+    grid-area: a1 / span 2;
     height: auto;
     width: 100%;
     text-align: center; }
@@ -188,15 +188,14 @@ h1 {
   color: #fafcf8;
   font-weight: bold;
   text-transform: uppercase;
-  text-shadow: 1px 1px 10px #0a0a0a9c;
+  text-shadow: 1px 1px 1px #0a0a0ad7;
   line-height: 4.5rem;
   width: 45%;
   margin: 100px auto;
-  letter-spacing: 5px; }
+  font-family: 'Oswald', sans-serif; }
 
 .thin, #frase p, .detalle {
-  font-weight: 100;
-  letter-spacing: 2px; }
+  font-weight: 100; }
 
 #botondeli {
   text-transform: uppercase;
@@ -523,7 +522,7 @@ td {
     bottom: 250px;
     transition: ease-in-out 1s; }
     .ArtMenu:hover #textoMenuDia :nth-child(5) {
-      display: inline-block; }
+      opacity: 1; }
 
 .ArtMenu img {
   height: 75%;
@@ -535,7 +534,6 @@ td {
   display: block;
   position: relative;
   bottom: 14%;
-  width: 100%;
   height: 14%;
   background-color: rgba(238, 10, 10, 0.753);
   padding: 2%;
@@ -543,8 +541,10 @@ td {
   text-align: center;
   border-radius: 2px; }
   #textoMenuDia :nth-child(5) {
-    display: none;
+    opacity: 0;
     padding: 10px; }
+  #textoMenuDia h5 {
+    margin: 0; }
   #textoMenuDia .precio {
     text-align: center;
     border-bottom: none; }
@@ -666,6 +666,7 @@ infoMain p {
   font-size: 0.9rem;
   padding: 2%;
   margin-top: 15px;
+  margin-bottom: 100px;
   text-align: center; }
 
 /* CONTACTO */
@@ -725,16 +726,21 @@ input[type=submit]:hover, [type=reset]:hover {
 
 .infoContacto {
   grid-area: a2;
-  width: 90%;
+  width: 80%;
+  height: 90%;
   margin: auto;
   font-size: 3rem;
-  padding-left: 40px;
+  padding: 50px;
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.589); }
 
 .datoscontacto {
   font-size: 0.8rem;
-  padding-top: 2rem; }
+  letter-spacing: 1px;
+  padding-top: 1rem; }
+  .datoscontacto i {
+    letter-spacing: 10px;
+    font-size: 1.3rem; }
 
 .mapa {
   padding: 0;
@@ -985,7 +991,7 @@ input[type=submit]:hover, [type=reset]:hover {
       padding-top: 1rem; }
     #textoMenuDia h5 {
       font-size: .8rem;
-      margin: 0; }
+      margin-bottom: 0; }
   /* CATERING */
   .catering main {
     grid-area: main;
