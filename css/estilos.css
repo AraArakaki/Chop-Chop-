@@ -70,7 +70,6 @@ p {
 
 /* HEADER Y NAV */
 header {
-  animation-duration: 1s;
   grid-area: header;
   background-color: rgba(0, 0, 0, 0.856);
   position: sticky;
@@ -82,7 +81,8 @@ header {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2%;
-  z-index: 2; }
+  z-index: 2;
+  box-shadow: 2px 2px 5px rgba(61, 60, 60, 0.322); }
 
 #logo img {
   width: 120px;
@@ -155,7 +155,8 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
-  color: black; }
+  color: black;
+  box-shadow: -3px -3px 10px rgba(168, 166, 166, 0.205); }
   footer ul {
     margin: 20px 0 5px;
     padding: 0; }
@@ -207,7 +208,7 @@ h1 {
   padding: 1%;
   font-size: 1.2rem;
   width: 250px;
-  margin: auto;
+  margin: 30px auto;
   background-color: rgba(2, 2, 2, 0.445); }
   #botondeli:hover {
     background-color: yellow;
@@ -220,8 +221,7 @@ h1 {
   background-color: rgba(250, 252, 248, 0.9);
   width: 90%;
   margin: 2% auto 2%;
-  padding: 4%;
-  animation-duration: 2s; }
+  padding: 4%; }
   #frase p {
     color: black;
     font-size: 1.4rem;
@@ -646,16 +646,16 @@ infoMain p {
 .catering {
   background-color: #fafcf8; }
 
-.catering .carousel, .active, img {
-  width: 100%;
-  height: 90vh;
+.carousel-item, .active, img {
+  width: 50vw;
+  height: 70vh;
   object-fit: cover;
   transition: .3s;
   border-radius: 3px;
   overflow: hidden; }
 
 .catering .infoMain p {
-  animation-duration: 2s;
+  animation-duration: 3s;
   display: block; }
 
 .detalle {
@@ -667,7 +667,8 @@ infoMain p {
   padding: 2%;
   margin-top: 15px;
   margin-bottom: 100px;
-  text-align: center; }
+  text-align: center;
+  animation-duration: 5s !important; }
 
 /* CONTACTO */
 #contacto main {
@@ -771,6 +772,9 @@ input[type=submit]:hover, [type=reset]:hover {
   .thin, #frase p, .detalle {
     font-size: 2.5rem;
     letter-spacing: 0; }
+  #botondeli {
+    font-size: 0.9rem;
+    width: 50%; }
   header {
     height: 60px;
     display: flex;
@@ -953,7 +957,7 @@ input[type=submit]:hover, [type=reset]:hover {
       line-height: 1.5rem; }
   .ArtMenu {
     top: 70px;
-    left: 85%;
+    left: 80%;
     height: 75px;
     width: 70px;
     overflow: hidden;
@@ -966,14 +970,15 @@ input[type=submit]:hover, [type=reset]:hover {
       left: 25%; }
       .ArtMenu:hover #textoMenuDia {
         height: 250px;
-        bottom: 230px;
+        bottom: 250px;
         padding: 2%;
         overflow: hidden;
         scrollbar-color: transparent; }
         .ArtMenu:hover #textoMenuDia p {
           display: inline-block;
           font-size: 0.8rem;
-          line-height: 1rem; }
+          line-height: 1rem;
+          margin: 0; }
     .ArtMenu:hover img {
       display: inline; }
     .ArtMenu img {
@@ -1005,6 +1010,11 @@ input[type=submit]:hover, [type=reset]:hover {
     width: 100%; }
   .catering aside {
     grid-area: aside; }
+  .carousel-item {
+    width: 100%; }
+  .side, img {
+    width: 100%;
+    height: 77vh; }
   .detalle {
     font-size: 0.9rem;
     width: 100%;
@@ -1103,7 +1113,9 @@ input[type=submit]:hover, [type=reset]:hover {
     width: 100%; }
   .catering .side img {
     width: 100%;
-    height: 400px; }
+    height: 60vh; }
+  .carousel-item {
+    width: 100%; }
   #form_presupuesto {
     width: 100%; }
   /* CONTACTO */
@@ -1116,6 +1128,7 @@ input[type=submit]:hover, [type=reset]:hover {
     grid-area: otro; }
   .infoContacto {
     padding: 2%;
+    height: 100%;
     font-weight: 100;
     line-height: 30px; }
     .infoContacto p {
