@@ -349,7 +349,7 @@ h1{
 }
 
 .imgphoto {
-    width:280px;
+    width:10vw;
     height:280px;
     object-fit: cover;
     display: block;
@@ -643,7 +643,7 @@ infoMain p{
 }
 
 .span{
-    width:590px;
+    width:50vw;
     height:280px;
     background-color:$red;
     padding:2% 3% 2% 3%;
@@ -699,6 +699,7 @@ infoMain p{
         font-weight: 500;
 
         &:hover{
+            border:2px solid $yellow;
             background-color: $yellow;
         }        
     }
