@@ -13,7 +13,17 @@ body {
   grid-template-rows: 120px auto auto auto;
   grid-template-areas: "header header" "a1 a2" "a3 a4" "footer footer";
   justify-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+  overflow-x: hidden; }
+
+::-webkit-scrollbar {
+  background: transparent;
+  transition: scroll .3s ease-in-out; }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(238, 10, 10, 0.753);
+  border-radius: 10px;
+  border: 1px rgba(255, 255, 255, 0.301) solid; }
 
 aside {
   grid-area: a2; }
@@ -143,7 +153,7 @@ nav .icono-menu {
 
 /* FOOTER */
 footer {
-  grid-area: footer footer;
+  grid-row: footer / span 2;
   animation-duration: 5s;
   display: flex;
   flex-direction: column;
@@ -219,6 +229,7 @@ h1 {
 
 #frase {
   background-color: rgba(250, 252, 248, 0.9);
+  border-radius: 3px;
   width: 90%;
   margin: 2% auto 2%;
   padding: 4%; }
@@ -232,14 +243,14 @@ h1 {
 #reviews {
   background-color: rgba(238, 10, 10, 0.753);
   height: auto;
-  padding: 3%;
+  padding: 50px 0 20px 0;
   overflow: hidden; }
 
 .Carousel {
   display: flex;
   flex-direction: row;
-  width: 90vw;
-  margin: 3% auto;
+  width: 100vw;
+  margin: 10px auto;
   animation: sliding 20s infinite; }
   .Carousel:hover {
     animation-play-state: paused; }
@@ -248,22 +259,25 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: start;
   justify-content: space-around;
-  row-gap: 1%;
   width: 100vw;
   margin: 0; }
 
 .resena {
   font-weight: 100;
-  width: 100vw;
+  width: 25vw;
   margin: 0 2%; }
   .resena p {
     color: #fafcf8;
     font-size: 1rem;
     text-align: center;
     line-height: 1.5rem;
-    animation-duration: 5s; }
+    animation-duration: 5s;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical; }
 
 @keyframes sliding {
   0% {
@@ -271,13 +285,13 @@ h1 {
   15% {
     transform: translateX(0vw); }
   25% {
-    transform: translateX(-90vw); }
+    transform: translateX(-100vw); }
   35% {
-    transform: translateX(-90vw); }
+    transform: translateX(-100vw); }
   50% {
-    transform: translateX(-180vw); }
+    transform: translateX(-200vw); }
   75% {
-    transform: translateX(-180vw); }
+    transform: translateX(-200vw); }
   95% {
     transform: translateX(0vw); }
   100% {
@@ -289,25 +303,17 @@ h1 {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
-  width: 80%;
-  margin: 2% auto; }
+  width: 40%;
+  margin: 2% auto;
+  padding: 0; }
 
 .yellow {
   color: yellow; }
 
 .nombreresena {
-  padding-top: 1rem;
+  padding-top: 10px;
   font-style: italic;
   font-weight: 600; }
-
-::-webkit-scrollbar {
-  background: transparent;
-  transition: scroll .3s ease-in-out; }
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(238, 10, 10, 0.753);
-  border-radius: 10px;
-  border: 1px rgba(255, 255, 255, 0.301) solid; }
 
 #photos {
   background-color: #fafcf8;
@@ -318,10 +324,10 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: space-around;
+  align-items: space-between;
   justify-content: center;
-  padding: 5%;
-  row-gap: 2vw;
+  padding: 5% 0;
+  row-gap: 1vw;
   column-gap: 1vw; }
 
 .container_img {
@@ -344,7 +350,8 @@ h1 {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: 1s ease; }
+  transition: 1s ease;
+  border-radius: 3px; }
 
 .container_img:hover .overlay {
   opacity: 1; }
@@ -394,9 +401,8 @@ h1 {
       transition: delay 3s; }
     .contenedor_icono button:visited img {
       background-color: black; }
-
-.nota {
-  font-size: 0.4rem; }
+  .contenedor_icono .nota {
+    font-size: 0.4rem; }
 
 .like_heart, .comprar {
   filter: invert(100%);
@@ -412,7 +418,7 @@ h1 {
   bottom: 15px;
   left: 15px;
   color: #fafcf8;
-  border-radius: 5%; }
+  border-radius: 3px; }
   #BotonCovid:hover {
     background-color: rgba(238, 10, 10, 0.753); }
 
@@ -438,9 +444,11 @@ h1 {
   background-color: #fafcf8; }
 
 .menu main {
-  grid-area: a1;
+  grid-row: a1 / span 2;
   width: 90%;
-  margin: auto; }
+  margin: auto;
+  height: 100%;
+  margin-bottom: 90px; }
 
 .menu aside {
   grid-area: a2; }
@@ -456,7 +464,8 @@ h1 {
   margin: auto;
   position: sticky;
   top: 98px;
-  padding: 10px 0; }
+  padding: 10px 0;
+  background-color: #fafcf8; }
   #platos li {
     color: black;
     border: 2px solid black;
@@ -515,8 +524,7 @@ td {
   position: fixed;
   top: 100px;
   left: 60%;
-  height: 100%;
-  z-index: 1; }
+  height: 100%; }
   .ArtMenu:hover #textoMenuDia {
     height: 250px;
     bottom: 250px;
@@ -569,7 +577,8 @@ infoMain p {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 56.25%; }
+  padding-top: 56.25%;
+  border-radius: 3px; }
 
 .media {
   position: absolute;
@@ -580,11 +589,17 @@ infoMain p {
   width: 100%;
   height: 100%; }
 
-.span {
-  width: 590px;
+#nosotros .imgphoto {
+  width: 280px;
+  height: 280px; }
+
+#nosotros .span {
+  width: 560px;
   height: 280px;
   background-color: rgba(238, 10, 10, 0.753);
-  padding: 2% 3% 2% 3%; }
+  border-radius: 3px;
+  padding: 30px;
+  margin: 0 0.5vw; }
 
 #nosotros {
   background-color: #fafcf8; }
@@ -619,13 +634,18 @@ infoMain p {
     height: 3rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.8); }
     #form_presupuesto #name:hover, #form_presupuesto #email:hover, #form_presupuesto #telefono:hover, #form_presupuesto #tipo-evento:hover, #form_presupuesto #fecha:hover, #form_presupuesto #lugar:hover, #form_presupuesto #submit:hover {
-      border: 1px solid yellow; }
+      border-bottom: 1px solid yellow; }
   #form_presupuesto #submit {
-    border: 2px solid black;
     width: 95%;
-    background-color: #fafcf8;
-    font-weight: 500; }
+    font-weight: 500;
+    color: black;
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 1%;
+    margin-top: 20px;
+    background-color: #fafcf8; }
     #form_presupuesto #submit:hover {
+      border: 2px solid yellow;
       background-color: yellow; }
   #form_presupuesto select {
     -webkit-appearance: none;
@@ -637,11 +657,11 @@ infoMain p {
     background-size: 5%; }
 
 .catering main {
-  grid-area: a1 a3;
+  grid-area: a1;
   height: 100%; }
 
 .catering aside {
-  grid-area: a2 a4; }
+  grid-area: a2; }
 
 .catering {
   background-color: #fafcf8; }
@@ -666,17 +686,12 @@ infoMain p {
   font-size: 0.9rem;
   padding: 2%;
   margin-top: 15px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   text-align: center;
-  animation-duration: 5s !important; }
+  animation-duration: 5s !important;
+  border-radius: 3px; }
 
 /* CONTACTO */
-#contacto main {
-  grid-area: a1;
-  width: 70%; }
-  #contacto main h2 {
-    color: #fafcf8; }
-
 #contacto {
   background: url(../imagenes/adam-birkett-pgLl73Jyhj0-unsplash.jpg);
   background-size: cover;
@@ -684,6 +699,11 @@ infoMain p {
   background-position: 50% 50%;
   background-attachment: fixed;
   color: #fafcf8; }
+  #contacto main {
+    grid-area: a1;
+    width: 70%; }
+    #contacto main h2 {
+      color: #fafcf8; }
 
 #formC {
   width: 100%;
@@ -699,7 +719,9 @@ form input, textarea {
   margin-top: 3%; }
 
 textarea {
-  color: black; }
+  color: black;
+  border-radius: 3px;
+  border: none; }
 
 input[type=text], [type=Email], [type=number] {
   height: 40px;
@@ -714,12 +736,13 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
 #contacto input[type=submit], [type=reset] {
   width: 49%;
   border: 2px solid #fafcf8;
+  border-radius: 3px;
   background-color: transparent;
   float: right;
   margin: 2% 0.5% 5% 0.5%;
   color: #fafcf8; }
 
-input[type=submit]:hover, [type=reset]:hover {
+#contacto input[type=submit]:hover, input[type=reset]:hover {
   border: 2px solid yellow;
   background-color: yellow;
   color: #080808;
@@ -733,7 +756,8 @@ input[type=submit]:hover, [type=reset]:hover {
   font-size: 3rem;
   padding: 50px;
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0.589); }
+  background-color: rgba(0, 0, 0, 0.589);
+  border-radius: 3px; }
 
 .datoscontacto {
   font-size: 0.8rem;
@@ -746,21 +770,22 @@ input[type=submit]:hover, [type=reset]:hover {
 .mapa {
   padding: 0;
   width: 100%;
-  height: 480px;
+  height: 100%;
+  margin-bottom: 60px;
   grid-area: a3 / span 2; }
 
 /* MEDIA QUERY */
 @media screen and (max-width: 480px) {
   h2 {
     text-align: center; }
-  /* INDEX */
   body {
-    grid-template-columns: 100vw;
+    grid-template-columns: 100%;
     grid-template-rows: 0.2fr auto auto auto 0.2fr;
     grid-template-areas: "header" "main"   "aside" "otro" "footer"; }
   footer li {
     padding: 0;
     margin: 0; }
+  /* INDEX */
   #fondouno main {
     grid-area: main; }
   h1 {
@@ -834,13 +859,12 @@ input[type=submit]:hover, [type=reset]:hover {
     margin: 0;
     overflow: hidden; }
   .Carousel {
-    width: 90vw; }
+    width: 100vw; }
   #reseña {
     width: auto; }
   .resena {
-    width: 80vw;
-    margin: auto;
-    padding: 0 5vw; }
+    width: 100vw;
+    margin: 0 3%; }
     .resena p {
       width: 100%;
       overflow: hidden;
@@ -864,7 +888,7 @@ input[type=submit]:hover, [type=reset]:hover {
       transform: translateX(0); } }
   .galeria {
     padding: 0; }
-  .imgphoto, .overlay, .container_img, .text {
+  .imgphoto, .container_img, .text {
     width: 100vw; }
   #photos {
     height: 330vh; }
@@ -892,18 +916,25 @@ input[type=submit]:hover, [type=reset]:hover {
   #nosotros aside {
     grid-area: aside; }
   #nosotros .galeria {
-    grid-area: otro; }
+    grid-area: otro;
+    margin-top: 10px; }
+    #nosotros .galeria .imgphoto {
+      width: 95vw; }
   #nosotros h3 {
-    text-align: center; }
+    text-align: center;
+    font-size: 1.2rem; }
   .span {
     padding: 5% 10%;
-    overflow: scroll; }
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden; }
     .span::-webkit-scrollbar {
       width: 0;
       background: transparent; }
   /* MENU */
   .menu main {
-    grid-area: main; }
+    grid-area: main;
+    height: 100%; }
   #platos {
     display: flex;
     flex-direction: column;
@@ -917,7 +948,7 @@ input[type=submit]:hover, [type=reset]:hover {
     top: 0px; }
     #platos li {
       width: 100%;
-      height: 100px;
+      height: 15vh;
       padding: 5% 10%;
       margin-top: 2%;
       border: none;
@@ -1001,7 +1032,7 @@ input[type=submit]:hover, [type=reset]:hover {
   .catering main {
     grid-area: main;
     width: 90%;
-    padding-bottom: 30px; }
+    height: 100%; }
   #form_presupuesto h5 {
     width: 100%; }
   #form_presupuesto #name, #form_presupuesto #email, #form_presupuesto #telefono, #form_presupuesto #tipo-evento, #form_presupuesto #fecha, #form_presupuesto #lugar {
@@ -1019,28 +1050,32 @@ input[type=submit]:hover, [type=reset]:hover {
     font-size: 0.9rem;
     width: 100%;
     margin: auto;
-    margin-top: 15px; }
+    margin: 15px auto; }
   /* CONTACTO */
   #contacto main {
     grid-area: main; }
   .infoContacto {
     grid-area: aside;
     height: 100%;
-    padding-left: 0; }
+    padding: 10px; }
     .infoContacto p {
       text-align: center; }
   input[type=submit], [type=reset] {
     width: 50%;
-    margin: 2% auto; } }
+    margin: 2% auto; }
+  .mapa {
+    grid-area: otro;
+    height: 100%;
+    margin-top: 20px; } }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   body {
-    grid-template-columns: 100%;
+    grid-template-columns: 100vw;
     grid-template-rows: 0.2fr auto auto auto 0.2fr;
     grid-template-areas: "header" "main"  "aside"  "otro" "footer"; }
-  #fondouno main {
-    grid-area: main; }
   /* INDEX */
+  main {
+    grid-area: main; }
   h1 {
     font-size: 4rem;
     line-height: 3.5rem;
@@ -1075,12 +1110,6 @@ input[type=submit]:hover, [type=reset]:hover {
   .resena {
     width: 40vw;
     margin: 1% 5vw; }
-    .resena p {
-      width: 100%;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 6;
-      -webkit-box-orient: vertical; }
   #reviews {
     height: 350px; }
   #photos .imgphoto, #photos .container_img, #photos .overlay, #photos .text {
@@ -1107,7 +1136,9 @@ input[type=submit]:hover, [type=reset]:hover {
   .catering main {
     grid-area: main;
     width: 90%;
-    height: 600px; }
+    height: auto; }
+    .catering main .detalle {
+      margin-bottom: 40px; }
   .catering .side {
     grid-area: aside;
     width: 100%; }
@@ -1140,18 +1171,18 @@ input[type=submit]:hover, [type=reset]:hover {
     width: 100%; }
   #platos {
     top: 110px;
-    width: 100%;
-    align-items: space-between;
-    margin: 0; }
+    width: 90%;
+    margin: 0;
+    align-items: space-between; }
     #platos li {
       width: 100%; }
       #platos li a {
         letter-spacing: 0; }
   .ArtMenu {
     top: 122px;
-    left: 80%;
-    height: 70px;
-    width: 100px;
+    left: 88%;
+    height: 80px;
+    width: 70px;
     overflow: hidden;
     box-shadow: -1px 3px rgba(0, 0, 0, 0.1); }
     .ArtMenu:hover {
@@ -1185,4 +1216,5 @@ input[type=submit]:hover, [type=reset]:hover {
       font-size: .8rem;
       margin: 0; }
   .table {
-    width: 90%; } }
+    width: 90%;
+    margin: 0; } }
