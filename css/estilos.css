@@ -466,17 +466,24 @@ h1 {
   top: 98px;
   padding: 10px 0;
   background-color: #fafcf8; }
+  #platos .btn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none; }
   #platos li {
     color: black;
     border: 2px solid black;
     border-radius: 2px;
     padding: 1%;
-    width: 100vw;
+    width: 20%;
     background-color: #fafcf8;
-    text-align: center; }
+    text-align: center;
+    padding: 0 !important; }
     #platos li a {
       color: black;
-      font-size: 80%; }
+      font-size: 80%;
+      padding: 10px 0; }
     #platos li:hover {
       color: black;
       background-color: yellow;
@@ -859,7 +866,7 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
     margin: 0;
     overflow: hidden; }
   .Carousel {
-    width: 100vw; }
+    width: 100%; }
   #reseña {
     width: auto; }
   .resena {
@@ -959,7 +966,8 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
         color: #fafcf8;
         text-shadow: -1px 2px rgba(20, 7, 7, 0.849);
         font-weight: 400;
-        background-image: none; }
+        background-image: none;
+        padding: 10% 0 !important; }
       #platos li a:hover {
         color: yellow; }
       #platos li:hover {
