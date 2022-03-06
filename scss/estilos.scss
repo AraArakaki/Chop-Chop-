@@ -13,7 +13,7 @@
 body{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 120px auto auto auto;
+    grid-template-rows: 120px auto auto 70px;
     grid-template-areas: "header header"
                          "a1 a2"
                          "a3 a4"
@@ -333,6 +333,7 @@ h1{
 }
 
 #photos{
+    grid-area:a3 / span 2;
     background-color: $white;
     height:auto;
 }
@@ -478,19 +479,20 @@ h1{
 }
 
 /* MENU */
-.menu{
+.menu , #nosotros , .catering{
     background-color: $white;
 }
 
-.menu main{
+.menu{
+    main{
     grid-row:a1 / span 2;
     @include center(90%);
     height:100%;
-    margin-bottom:90px;
-}
-
-.menu aside{
-    grid-area:a2;
+    margin-bottom:20px;
+    }
+    aside{
+        grid-area:a2;
+    }
 }
 
 #platos{
@@ -501,7 +503,9 @@ h1{
     top:98px;
     padding:10px 0;
     background-color:$white;
-    .btn{width:100%;
+    
+    .btn{
+        width:100%;
         height:100%;
         background-color: transparent;   
         border:none; 
@@ -583,14 +587,12 @@ td{
             opacity:1;        
         }
     }
-
-}
-
-.ArtMenu img{
-    height:75%;
-    width:100%;
-    object-fit:cover;
-    border-radius: 3px;
+    img{
+        height:75%;
+        width:100%;
+        object-fit:cover;
+        border-radius: 3px;
+    }
 }
 
 #textoMenuDia{
@@ -623,13 +625,27 @@ infoMain p{
     @include texto(black, 1rem, justify, 1.5rem);
 }
 
-#nosotros main{
-    grid-area:a2;
-    width:100%;
-}
-#nosotros aside{
-    grid-area:a1;
-    width:100%;
+#nosotros {
+    main{
+        grid-area:a2;
+        width:100%;
+    }
+    aside{
+        grid-area:a1;
+        width:100%;
+    }
+    .imgphoto{
+        width:280px;
+        height:280px;
+    }
+    .span{
+        width:560px;
+        height:280px;
+        background-color:$red;
+        border-radius: 3px;
+        padding:30px;
+        margin:0 0.5vw;
+    }
 }
 
 .video {
@@ -648,23 +664,6 @@ infoMain p{
     right: 0;
     width: 100%;
     height: 100%;
-}
-
-#nosotros .imgphoto{
-    width:280px;
-    height:280px;
-}
-
-#nosotros .span{
-    width:560px;
-    height:280px;
-    background-color:$red;
-    border-radius: 3px;
-    padding:30px;
-    margin:0 0.5vw;}
-
-#nosotros{
-    background-color: $white;
 }
   
 .textoW{
@@ -729,17 +728,18 @@ infoMain p{
     }    
 }
 
-.catering main{
+.catering{
+    main{
     grid-area:a1;
     height:100%;
-}
-
-.catering aside{
-    grid-area:a2;
-}
-
-.catering{
-    background-color: $white;
+        .infoMain p {
+            animation-duration: 3s;
+            display: block;
+        }
+    }
+    .catering aside{
+        grid-area:a2;
+    }    
 }
 
 .carousel-item , .active , img{
@@ -749,11 +749,6 @@ infoMain p{
     transition:.3s;
     border-radius: 3px;
     overflow: hidden;
-}
-
-.catering .infoMain p {
-    animation-duration: 3s;
-    display: block;
 }
 
 .detalle{
@@ -857,12 +852,10 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     }
 }
 
-
 .mapa{
     padding:0;
     width:100%;
     height:100%;
-    margin-bottom:60px;
     grid-area: a3 / span 2;
 }
 
@@ -876,7 +869,7 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
 
     body{     
         grid-template-columns:100%;
-        grid-template-rows: 0.2fr auto auto auto 0.2fr;
+        grid-template-rows: 0.2fr auto auto auto 60px;
         grid-template-areas:"header"
                             "main"  
                             "aside"
@@ -885,6 +878,7 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     }
     
     footer{
+        grid-area:footer;
         & li{
             padding:0;
             margin:0;
@@ -892,8 +886,17 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     }
     /* INDEX */        
 
-    #fondouno main{
+    #fondouno {
+        main{
         grid-area:main;
+        }
+        h4{
+            font-size:1.3rem;
+            margin:2%;
+        }
+        #photos{
+            grid-area:otro;
+        }
     }
 
     h1{
@@ -975,45 +978,37 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
         background-color: rgba(248, 250, 252, 0.945);
         @include center(100%);
         padding:10%;  
+        p{
+            font-size: 1rem;
+            line-height: 21px;
+        }
     }
-        
-    #frase p{
-        font-size: 1rem;
-        line-height: 21px;
-    }
-
-    #fondouno h4{
-        font-size:1.3rem;
-        margin:2%;
-    }
-
+         
     section #reviews{
         width:100vw;
         height:250px;
         margin: 0;
         overflow: hidden;
-    }
-
-    .Carousel{
-        width: 100%;
+        .Carousel{
+            width: 100%;
+        }
     }
 
     #reseña{
         width:auto;
-    }
+    
+        .resena{
+            width:100vw;
+            margin:0 3%;
 
-    .resena{
-        width:100vw;
-        margin:0 3%;
-
-        & p{
-            width:100%;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
+            & p{
+                width:100%;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+            } 
         }
-        
     }
 
     @keyframes sliding {
@@ -1040,19 +1035,17 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
         }
     }
 
-    .galeria{
-        padding:0;
-    }
-    .imgphoto , .container_img , .text{
-        width:100vw;
-    }
-
     #photos{
-        height:330vh;
+        height:auto;
+        .galeria{
+            padding:0;
+            .imgphoto , .container_img , .text{
+                width:100vw;
+            }
+        }
     }
 
     .contenedor_icono{
-        
         button img{
             width:35%;
             &:hover{
@@ -1082,42 +1075,44 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
         
     /* NOSOTROS */
             
-    #nosotros main{
+    #nosotros{
+        main{
         grid-area:main;
-    }
-    #nosotros aside{
-        grid-area:aside;
-    }
-    #nosotros .galeria{
-        grid-area:otro;
-        margin-top:10px;
-        .imgphoto{
-            width:95vw;
+        }
+        aside{
+            grid-area:aside;
+        }
+    
+        .galeria{
+            grid-area:otro;
+            margin-top:10px;
+            .imgphoto{
+                width:95vw;
+            }
+            .span{
+                padding:5% 10%;
+                width:100%;
+                overflow:scroll;
+                overflow-x: hidden; 
+        
+                    &::-webkit-scrollbar {
+                        width:0;        
+                        background: transparent;
+                    }
+            }
+        }
+        h3{
+            text-align: center;
+            font-size: 1.2rem;
         }
     }
-    #nosotros h3{
-        text-align: center;
-        font-size: 1.2rem;
-    }
-    .span{
-        padding:5% 10%;
-        width:100%;
-        overflow:scroll;
-        overflow-x: hidden; 
-
-            &::-webkit-scrollbar {
-                width:0;        
-                background: transparent;
-            }
-    }
-
+    
+    
     /* MENU */
 
     .menu main{
         grid-area:main;
-        height:100%;
     }
-
     #platos{
         @include flex(column, nowrap, space-evenly, center);
         column-gap: 2%;
@@ -1151,24 +1146,23 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
             &:hover{
                 border:1px solid rgba($white,0.9);
             }
-        }      
-    }
+        }
 
-    #Entradas{
-        background-image: url(../imagenes/vietnamesespringrolls.jpeg);  
-    }
-    
-    #Principal{
-        background-image: url(../imagenes/Gyudon.jpeg); 
-    }
-    #Sushi {
-        background-image: url(../imagenes/chirashi.jpeg);   
-    }           
-    #Postres {
-        background-image: url(../imagenes/melonbingsu.jpeg);   
-    }
-    #Bebidas {
-        background-image: url(../imagenes/drink.jpeg);   
+        #Entradas{
+            background-image: url(../imagenes/vietnamesespringrolls.jpeg);  
+        }
+        #Principal{
+            background-image: url(../imagenes/Gyudon.jpeg); 
+        }
+        #Sushi {
+            background-image: url(../imagenes/chirashi.jpeg);   
+        }           
+        #Postres {
+            background-image: url(../imagenes/melonbingsu.jpeg);   
+        }
+        #Bebidas {
+            background-image: url(../imagenes/drink.jpeg);   
+        }      
     }
 
     .table , th{
@@ -1188,7 +1182,6 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
             line-height: 1.5rem;            
         }
     }
-
 
     .ArtMenu{
         top:70px;            
@@ -1214,10 +1207,8 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
                     font-size: 0.8rem;
                     line-height: 1rem;
                     margin:0;
-                }
-                
-            }
-            
+                }   
+            }           
         }
         &:hover img{
             display: inline; 
@@ -1246,14 +1237,18 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
             margin-bottom: 0;
         }
     }  
-    
 
     /* CATERING */
 
-    .catering main{
+    .catering {
+        main{
         grid-area:main;
         width:90%;
         height:100%;
+        }
+        aside{
+            grid-area:aside;
+        }
     }
 
     #form_presupuesto{
@@ -1266,9 +1261,6 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
         #submit{
             width:100%;
         }
-    }
-    .catering aside{
-        grid-area:aside;
     }
     .carousel-item {
         width:100%;
@@ -1313,7 +1305,7 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
 @media only screen AND (min-width:481px) and (max-width:768px){    
     body{    
         grid-template-columns:100vw;
-        grid-template-rows: 0.2fr auto auto auto 0.2fr;
+        grid-template-rows: 0.2fr auto auto auto 70px;
         grid-template-areas:"header"
                             "main" 
                             "aside" 
@@ -1322,9 +1314,15 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     }
     
     /* INDEX */
-    main{ 
-        grid-area: main;
+    #fondouno{
+        main{ 
+            grid-area: main;
+        }
+        #photos{
+            grid-area:otro;
+        }
     }
+    #fondouno 
 
     h1{
         font-size: 4rem;
@@ -1379,13 +1377,13 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     
     .resena{
         width:40vw;
-        margin:1% 5vw;
-        
+        margin:1% 5vw;   
     }   
     
     #reviews{
         height:350px;
     }
+
     #photos{
         .imgphoto , .container_img , .overlay , .text {
         width:40vw;
@@ -1394,16 +1392,18 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     }
     
     /*  NOSOTROS */     
-    #nosotros main{
+    #nosotros {
+        main{
         grid-area:main;
         padding:2%;
+        }
+        aside{
+            grid-area:aside;
+            height:400px;
+            padding:2%;
+        }
     }
-    #nosotros aside{
-        grid-area:aside;
-        height:400px;
-        padding:2%;
-    }
-    
+
     .galeria{
         grid-area:otro;
     }  
@@ -1418,22 +1418,26 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     }           
     
     /* CATERING */    
-    .catering main{
+    .catering{
+        main{
         grid-area:main;
         width:90%;
         height:auto;
-        .detalle{
-            margin-bottom:40px;
+            .detalle{
+                margin-bottom:40px;
+            }
         }
+        .side{
+            grid-area:aside;
+            width:100%;
+                img{
+                    width:100%;
+                    height:60vh;
+                }
+            }
+         
     }
-    .catering .side{
-        grid-area:aside;
-        width:100%;
-    }
-    .catering .side img{
-        width:100%;
-        height:60vh;
-    }
+       
     .carousel-item {
         width:100%;
     }
@@ -1442,11 +1446,13 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     }
     
     /* CONTACTO */
-    #contacto main{
+    #contacto{ 
+        main{
         grid-area:main;
-    }
-    #contacto aside{
-        grid-area:aside;
+        }
+        aside{
+            grid-area:aside;
+        }
     }
     .mapa{
         width:100%;
@@ -1465,9 +1471,6 @@ input[type=text]:focus,[type=Email]:focus,[type=number]:focus{
     /* MENU */
     .menu main{
         grid-area: main;
-    }
-    #navPrincipal{
-        width:100%;
     }
     
     #platos{

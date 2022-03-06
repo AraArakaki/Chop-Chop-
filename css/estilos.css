@@ -10,7 +10,7 @@
 body {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 120px auto auto auto;
+  grid-template-rows: 120px auto auto 70px;
   grid-template-areas: "header header" "a1 a2" "a3 a4" "footer footer";
   justify-items: center;
   justify-content: space-around;
@@ -316,6 +316,7 @@ h1 {
   font-weight: 600; }
 
 #photos {
+  grid-area: a3 / span 2;
   background-color: #fafcf8;
   height: auto; }
 
@@ -440,7 +441,7 @@ h1 {
   padding-bottom: 0; }
 
 /* MENU */
-.menu {
+.menu, #nosotros, .catering {
   background-color: #fafcf8; }
 
 .menu main {
@@ -448,7 +449,7 @@ h1 {
   width: 90%;
   margin: auto;
   height: 100%;
-  margin-bottom: 90px; }
+  margin-bottom: 20px; }
 
 .menu aside {
   grid-area: a2; }
@@ -538,12 +539,11 @@ td {
     transition: ease-in-out 1s; }
     .ArtMenu:hover #textoMenuDia :nth-child(5) {
       opacity: 1; }
-
-.ArtMenu img {
-  height: 75%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 3px; }
+  .ArtMenu img {
+    height: 75%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px; }
 
 #textoMenuDia {
   display: block;
@@ -580,6 +580,18 @@ infoMain p {
   grid-area: a1;
   width: 100%; }
 
+#nosotros .imgphoto {
+  width: 280px;
+  height: 280px; }
+
+#nosotros .span {
+  width: 560px;
+  height: 280px;
+  background-color: rgba(238, 10, 10, 0.753);
+  border-radius: 3px;
+  padding: 30px;
+  margin: 0 0.5vw; }
+
 .video {
   position: relative;
   overflow: hidden;
@@ -595,21 +607,6 @@ infoMain p {
   right: 0;
   width: 100%;
   height: 100%; }
-
-#nosotros .imgphoto {
-  width: 280px;
-  height: 280px; }
-
-#nosotros .span {
-  width: 560px;
-  height: 280px;
-  background-color: rgba(238, 10, 10, 0.753);
-  border-radius: 3px;
-  padding: 30px;
-  margin: 0 0.5vw; }
-
-#nosotros {
-  background-color: #fafcf8; }
 
 .textoW, #textoMenuDia :nth-child(5) {
   color: #fafcf8;
@@ -666,12 +663,12 @@ infoMain p {
 .catering main {
   grid-area: a1;
   height: 100%; }
+  .catering main .infoMain p {
+    animation-duration: 3s;
+    display: block; }
 
-.catering aside {
+.catering .catering aside {
   grid-area: a2; }
-
-.catering {
-  background-color: #fafcf8; }
 
 .carousel-item, .active, img {
   width: 50vw;
@@ -680,10 +677,6 @@ infoMain p {
   transition: .3s;
   border-radius: 3px;
   overflow: hidden; }
-
-.catering .infoMain p {
-  animation-duration: 3s;
-  display: block; }
 
 .detalle {
   width: 95%;
@@ -778,7 +771,6 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
   padding: 0;
   width: 100%;
   height: 100%;
-  margin-bottom: 60px;
   grid-area: a3 / span 2; }
 
 /* MEDIA QUERY */
@@ -787,14 +779,21 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
     text-align: center; }
   body {
     grid-template-columns: 100%;
-    grid-template-rows: 0.2fr auto auto auto 0.2fr;
+    grid-template-rows: 0.2fr auto auto auto 60px;
     grid-template-areas: "header" "main"   "aside" "otro" "footer"; }
-  footer li {
-    padding: 0;
-    margin: 0; }
+  footer {
+    grid-area: footer; }
+    footer li {
+      padding: 0;
+      margin: 0; }
   /* INDEX */
   #fondouno main {
     grid-area: main; }
+  #fondouno h4 {
+    font-size: 1.3rem;
+    margin: 2%; }
+  #fondouno #photos {
+    grid-area: otro; }
   h1 {
     font-size: 2.8rem;
     line-height: 2.8rem;
@@ -854,30 +853,27 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
     width: 100%;
     margin: auto;
     padding: 10%; }
-  #frase p {
-    font-size: 1rem;
-    line-height: 21px; }
-  #fondouno h4 {
-    font-size: 1.3rem;
-    margin: 2%; }
+    #frase p {
+      font-size: 1rem;
+      line-height: 21px; }
   section #reviews {
     width: 100vw;
     height: 250px;
     margin: 0;
     overflow: hidden; }
-  .Carousel {
-    width: 100%; }
+    section #reviews .Carousel {
+      width: 100%; }
   #reseña {
     width: auto; }
-  .resena {
-    width: 100vw;
-    margin: 0 3%; }
-    .resena p {
-      width: 100%;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical; }
+    #reseña .resena {
+      width: 100vw;
+      margin: 0 3%; }
+      #reseña .resena p {
+        width: 100%;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical; }
   @keyframes sliding {
     0% {
       transform: translateX(0vw); }
@@ -893,12 +889,12 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
       transform: translateX(-500vw); }
     100% {
       transform: translateX(0); } }
-  .galeria {
-    padding: 0; }
-  .imgphoto, .container_img, .text {
-    width: 100vw; }
   #photos {
-    height: 330vh; }
+    height: auto; }
+    #photos .galeria {
+      padding: 0; }
+      #photos .galeria .imgphoto, #photos .galeria .container_img, #photos .galeria .text {
+        width: 100vw; }
   .contenedor_icono button img {
     width: 35%; }
     .contenedor_icono button img:hover {
@@ -927,21 +923,20 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
     margin-top: 10px; }
     #nosotros .galeria .imgphoto {
       width: 95vw; }
+    #nosotros .galeria .span {
+      padding: 5% 10%;
+      width: 100%;
+      overflow: scroll;
+      overflow-x: hidden; }
+      #nosotros .galeria .span::-webkit-scrollbar {
+        width: 0;
+        background: transparent; }
   #nosotros h3 {
     text-align: center;
     font-size: 1.2rem; }
-  .span {
-    padding: 5% 10%;
-    width: 100%;
-    overflow: scroll;
-    overflow-x: hidden; }
-    .span::-webkit-scrollbar {
-      width: 0;
-      background: transparent; }
   /* MENU */
   .menu main {
-    grid-area: main;
-    height: 100%; }
+    grid-area: main; }
   #platos {
     display: flex;
     flex-direction: column;
@@ -972,16 +967,16 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
         color: yellow; }
       #platos li:hover {
         border: 1px solid rgba(250, 252, 248, 0.9); }
-  #Entradas {
-    background-image: url(../imagenes/vietnamesespringrolls.jpeg); }
-  #Principal {
-    background-image: url(../imagenes/Gyudon.jpeg); }
-  #Sushi {
-    background-image: url(../imagenes/chirashi.jpeg); }
-  #Postres {
-    background-image: url(../imagenes/melonbingsu.jpeg); }
-  #Bebidas {
-    background-image: url(../imagenes/drink.jpeg); }
+    #platos #Entradas {
+      background-image: url(../imagenes/vietnamesespringrolls.jpeg); }
+    #platos #Principal {
+      background-image: url(../imagenes/Gyudon.jpeg); }
+    #platos #Sushi {
+      background-image: url(../imagenes/chirashi.jpeg); }
+    #platos #Postres {
+      background-image: url(../imagenes/melonbingsu.jpeg); }
+    #platos #Bebidas {
+      background-image: url(../imagenes/drink.jpeg); }
   .table, th {
     display: none; }
   .table-platos {
@@ -1041,14 +1036,14 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
     grid-area: main;
     width: 90%;
     height: 100%; }
+  .catering aside {
+    grid-area: aside; }
   #form_presupuesto h5 {
     width: 100%; }
   #form_presupuesto #name, #form_presupuesto #email, #form_presupuesto #telefono, #form_presupuesto #tipo-evento, #form_presupuesto #fecha, #form_presupuesto #lugar {
     width: 100%; }
   #form_presupuesto #submit {
     width: 100%; }
-  .catering aside {
-    grid-area: aside; }
   .carousel-item {
     width: 100%; }
   .side, img {
@@ -1079,12 +1074,14 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   body {
     grid-template-columns: 100vw;
-    grid-template-rows: 0.2fr auto auto auto 0.2fr;
+    grid-template-rows: 0.2fr auto auto auto 70px;
     grid-template-areas: "header" "main"  "aside"  "otro" "footer"; }
   /* INDEX */
-  main {
+  #fondouno main {
     grid-area: main; }
-  h1 {
+  #fondouno #photos {
+    grid-area: otro; }
+  #fondouno h1 {
     font-size: 4rem;
     line-height: 3.5rem;
     width: 400px;
@@ -1150,9 +1147,9 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
   .catering .side {
     grid-area: aside;
     width: 100%; }
-  .catering .side img {
-    width: 100%;
-    height: 60vh; }
+    .catering .side img {
+      width: 100%;
+      height: 60vh; }
   .carousel-item {
     width: 100%; }
   #form_presupuesto {
@@ -1175,8 +1172,6 @@ input[type=text]:focus, [type=Email]:focus, [type=number]:focus {
   /* MENU */
   .menu main {
     grid-area: main; }
-  #navPrincipal {
-    width: 100%; }
   #platos {
     top: 110px;
     width: 90%;
